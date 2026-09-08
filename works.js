@@ -1,5 +1,40 @@
 window.WORKS = [
   {
+    "file": "works/一些短视频运营数据 — **Short‑video Operation Data**/0768e28954714a7b15b77d27407b48a6.PNG",
+    "title": "0768e28954714a7b15b77d27407b48a6",
+    "cat": "一些短视频运营数据 — Short‑video Operation Data"
+  },
+  {
+    "file": "works/一些短视频运营数据 — **Short‑video Operation Data**/80876.JPG",
+    "title": "80876",
+    "cat": "一些短视频运营数据 — Short‑video Operation Data"
+  },
+  {
+    "file": "works/一些短视频运营数据 — **Short‑video Operation Data**/IMG_3457.PNG",
+    "title": "IMG_3457",
+    "cat": "一些短视频运营数据 — Short‑video Operation Data"
+  },
+  {
+    "file": "works/一些短视频运营数据 — **Short‑video Operation Data**/IMG_3458.PNG",
+    "title": "IMG_3458",
+    "cat": "一些短视频运营数据 — Short‑video Operation Data"
+  },
+  {
+    "file": "works/一些短视频运营数据 — **Short‑video Operation Data**/IMG_3459.PNG",
+    "title": "IMG_3459",
+    "cat": "一些短视频运营数据 — Short‑video Operation Data"
+  },
+  {
+    "file": "works/一些短视频运营数据 — **Short‑video Operation Data**/IMG_3460.PNG",
+    "title": "IMG_3460",
+    "cat": "一些短视频运营数据 — Short‑video Operation Data"
+  },
+  {
+    "file": "works/一些短视频运营数据 — **Short‑video Operation Data**/微信图片_20260406170705_23327_58.png",
+    "title": "微信图片_20260406170705_23327_58",
+    "cat": "一些短视频运营数据 — Short‑video Operation Data"
+  },
+  {
     "file": "works/个人ip类型**Personal IP Content**/2026-07-10 150653.mp4",
     "title": "2026-07-10 150653",
     "cat": "个人ip类型Personal IP Content"
