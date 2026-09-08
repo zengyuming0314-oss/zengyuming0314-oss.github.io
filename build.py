@@ -36,14 +36,14 @@ if os.path.isdir(WORKS):
                 if ext in VIDEO_EXT | IMG_EXT:
                     items.append({"file": f"works/{entry}/{f}", "title": clean(f), "cat": entry})
 
-out = "window.WORKS = " + json.dumps(items, ensure_ascii=False, indent=2) + ";"
-
 # 追加远程视频（remotes.json：大文件放 GitHub Releases，这里写完整 URL）
 remotes_path = os.path.join(ROOT, "remotes.json")
 if os.path.exists(remotes_path):
     with open(remotes_path, encoding="utf-8") as fp:
         remotes = json.load(fp)
     items.extend(remotes)
+
+out = "window.WORKS = " + json.dumps(items, ensure_ascii=False, indent=2) + ";"
 with open(os.path.join(ROOT, "works.js"), "w", encoding="utf-8") as fp:
     fp.write(out)
 
