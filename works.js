@@ -77,12 +77,6 @@ window.WORKS = [
     "poster": "works/短视频类1. **Short‑form Video**/油菜花2.mov.poster.jpg"
   },
   {
-    "file": "works/短视频类1. **Short‑form Video**/海边短片.mp4",
-    "title": "海边短片",
-    "cat": "短片",
-    "poster": "works/短视频类1. **Short‑form Video**/海边短片.mp4.poster.jpg"
-  },
-  {
     "file": "works/纪录片**Documentary**/南昌纪录片.mp4",
     "title": "南昌纪录片",
     "cat": "纪录片",

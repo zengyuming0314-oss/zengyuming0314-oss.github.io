@@ -78,7 +78,19 @@
   .job-body{display:none;padding:2px 22px 20px 170px;color:var(--dim);font-size:13.8px;animation:fadeUp .45s var(--ease)}
   .job.open .job-body{display:block}
   .job-body li{margin-bottom:4px}
-  /* 03 作品 */
+  /* 03 作品 —— 深色影院区（切回最初的配色，专注看片）*/
+  #s-works{
+    --bg:#0e0f12; --panel:#16181d; --panel2:#1e222b; --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.2);
+    --text:#eceef2; --dim:#9aa0ac; --faint:#6a7280; --coral:#e25555; --amber:#f0a35e; --sun:#ffce7a;
+    --grad:linear-gradient(92deg,#e25555,#f0a35e 60%,#ffce7a);
+    background:radial-gradient(900px 420px at 85% -15%,rgba(226,85,85,.18),transparent 60%),radial-gradient(700px 380px at -5% 110%,rgba(240,163,94,.12),transparent 60%),var(--bg);
+    border-radius:34px;padding:58px 36px 46px;margin:14px 0 26px;box-shadow:0 30px 70px rgba(30,12,5,.22);
+    transition:box-shadow .6s var(--ease)}
+  #s-works .wall .card{background:var(--panel);box-shadow:0 12px 28px rgba(0,0,0,.45)}
+  #s-works .wall .card:hover{box-shadow:0 22px 50px rgba(0,0,0,.6)}
+  #s-works .img-btn{color:var(--dim);border-color:var(--line2)}
+  #s-works .img-btn:hover{border-color:var(--coral);color:var(--coral);background:rgba(226,85,85,.08)}
+  @media(max-width:700px){#s-works{padding:44px 18px 34px;border-radius:22px}}
   .chips{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 20px}
   .chip{border:1px solid var(--line2);background:var(--panel);color:var(--dim);border-radius:999px;padding:8px 19px;font-size:13.5px;cursor:pointer;font-family:var(--fd);letter-spacing:.07em;transition:all .3s var(--ease);box-shadow:0 3px 10px rgba(61,43,25,.04);font-weight:600}
   .chip:hover{color:var(--text);transform:translateY(-2px);border-color:var(--amber)}
