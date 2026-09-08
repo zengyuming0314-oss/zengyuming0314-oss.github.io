@@ -34,9 +34,9 @@ def canon(cat):
         (r"宣传|招商", "宣传片"),
         (r"访谈", "访谈"),
         (r"纪录", "纪录片"),
+        (r"运营数据|数据", "运营数据"),
         (r"短视频|短片", "短片"),
         (r"aigc|AI创作|ai创作", "AIGC"),
-        (r"运营数据|数据", "运营数据"),
     ]
     for pat, tag in rules:
         if re.search(pat, cat, re.I) or re.search(pat, s, re.I):
@@ -46,23 +46,27 @@ def canon(cat):
 def media_title(fname):
     return clean(fname)
 
+def is_media(fname):
+    if fname.endswith(".poster.jpg"):
+        return False  # 封面文件不算作品
+    return os.path.splitext(fname)[1].lower() in VIDEO_EXT | IMG_EXT
+
 items = []
 if os.path.isdir(WORKS):
     for entry in sorted(os.listdir(WORKS)):
         p = os.path.join(WORKS, entry)
         if os.path.isfile(p):
-            ext = os.path.splitext(entry)[1].lower()
-            if ext in VIDEO_EXT | IMG_EXT:
+            if is_media(entry):
                 items.append({"file": "works/" + entry, "title": media_title(entry), "cat": canon("未分类")})
         elif os.path.isdir(p):
             for f in sorted(os.listdir(p)):
                 fp = os.path.join(p, f)
-                ext = os.path.splitext(f)[1].lower()
-                if ext in VIDEO_EXT | IMG_EXT:
-                    item = {"file": f"works/{entry}/{f}", "title": media_title(f), "cat": canon(entry)}
-                    if os.path.exists(fp + ".poster.jpg"):
-                        item["poster"] = f"works/{entry}/{f}.poster.jpg"
-                    items.append(item)
+                if not is_media(f):
+                    continue
+                item = {"file": f"works/{entry}/{f}", "title": media_title(f), "cat": canon(entry)}
+                if os.path.exists(fp + ".poster.jpg"):
+                    item["poster"] = f"works/{entry}/{f}.poster.jpg"
+                items.append(item)
 
 # 远程大视频（remotes.json）
 remotes_path = os.path.join(ROOT, "remotes.json")
