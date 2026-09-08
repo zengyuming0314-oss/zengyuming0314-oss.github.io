@@ -17,14 +17,8 @@
     --fm:"Cascadia Code","JetBrains Mono","SF Mono",Consolas,monospace;
     --fs:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
   }
-  /* 深色影院主题（作品区激活时全站切换）*/
-  body[data-theme="dark"]{
-    --bg:#0e0f12; --panel:#171a21; --panel2:#20242e; --line:rgba(255,255,255,.1); --line2:rgba(255,255,255,.22);
-    --text:#eef0f5; --dim:#a3abb8; --faint:#6b7280; --coral:#e25555; --amber:#f0a35e; --sun:#ffce7a;
-    --grad:linear-gradient(92deg,#e25555,#f0a35e 60%,#ffce7a);
-    --navBg:rgba(14,15,18,.72); --sh:rgba(0,0,0,.4);
-  }
-  body{background:var(--bg);color:var(--text);font-family:var(--fs);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .65s var(--ease),color .65s var(--ease)}
+  /* 深色影院主题色对（JS 按滚动进度混合，不写 data-theme）*/
+  body{background:var(--bg);color:var(--text);font-family:var(--fs);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
@@ -150,12 +144,6 @@
   .lb-prev{left:16px}.lb-next{right:16px}
   @media(max-width:700px){.wrap{padding:0 18px}.nav-item{font-size:12.5px;padding:8px 10px}.nav-item .no{display:none}.job-body{padding-left:22px}.hero h1{font-size:46px}}
   @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-  /* 主题切换 & 动效的统一过渡（进入作品区全站平滑变深色）*/
-  body,section,.nav-in,section .h2,section h2,.sec-h .no,.sec-h .en,.role,.meta,.brand,.nav-item,.tag2,.more-btn,.detail p,
-  .job,.job-head,.job-body,.job-head .o,.job-head .r,.job-head .t,.chip,.img-btn,.imgc,.img-cap,.skill,.skill h5,.skill .sg span,.c,.c .v,.c .v a,.c .k,footer,.rv,.chips,.empty{
-    transition:background-color .6s var(--ease),color .6s var(--ease),border-color .6s var(--ease),box-shadow .6s var(--ease),opacity .6s var(--ease),transform .6s var(--ease);
-  }
-  .sec-h .no,.sec-h h2,.brand em,.skill h5{transition:none}
 </style>
 </head>
 <body>
@@ -322,7 +310,6 @@ function movePill(btn){if(!btn)return;pill.style.width=btn.offsetWidth+"px";pill
 function setActive(sec){
   navItems.forEach(n=>n.classList.toggle("active",n.dataset.sec===sec));
   movePill(navItems.find(n=>n.dataset.sec===sec));
-  document.body.dataset.theme = (sec==="s-works") ? "dark" : "light";
 }
 const spy=new IntersectionObserver(es=>{
   es.forEach(e=>{if(e.isIntersecting)setActive(e.target.id);});
@@ -338,7 +325,38 @@ function toggleLang(){lang=lang==="zh"?"en":"zh";localStorage.setItem("pf_lang",
 document.getElementById("langBtn").onclick=toggleLang;
 document.getElementById("year").textContent=new Date().getFullYear();
 renderStatic();watchReveal();
-requestAnimationFrame(()=>setActive("s-about"));
+/* ===== 滚动联动主题混合：进入作品区整站逐帧渐变到深色影院风 ===== */
+const WORKS=document.getElementById("s-works");
+const PAIRS={
+  bg:[[248,244,237],[14,15,18]],panel:[[255,253,248],[23,26,33]],panel2:[[241,235,224],[32,36,46]],
+  text:[[42,33,24],[238,240,245]],dim:[[111,99,85],[163,171,184]],faint:[[168,154,137],[107,114,128]],
+  line:[[61,43,25,.10],[255,255,255,.10]],line2:[[61,43,25,.20],[255,255,255,.22]],
+  navBg:[[248,244,237,.8],[14,15,18,.72]],sh:[[61,43,25,.07],[0,0,0,.4]]
+};
+const PKEYS=Object.keys(PAIRS);
+function mixC(p,t){const a=p[0],b=p[1];const out=a.map((v,i)=>Math.round(v+(b[i]-v)*t));
+  return out.length>3?`rgba(${out[0]},${out[1]},${out[2]},${(a[3]+(b[3]-a[3])*t).toFixed(3)})`:`rgb(${out[0]},${out[1]},${out[2]})`;}
+let curT=-1,targetT=0,settled=true;
+function themeLoop(){
+  const r=WORKS.getBoundingClientRect(),vh=window.innerHeight;
+  const entry=Math.min(1,Math.max(0,(vh*.66-r.top)/(vh*.5)));   // 顶部进入视口中下 → 开始变深
+  const exit =Math.min(1,Math.max(0,(r.bottom-vh*.24)/(vh*.62))); // 底部离开前 → 渐渐变回亮
+  targetT=Math.min(entry,exit);
+  if(Math.abs(curT-targetT)>.004){curT+= (targetT-curT)*.10;settled=false;}
+  else if(!settled){curT=targetT;settled=true;}
+  if(settled&&(targetT===0||targetT===1)){
+    if(Math.abs(curT-(targetT>0?1:0))>0)curT=targetT>0?1:0;
+    if(document.body.dataset.t!==String(curT)){
+      PKEYS.forEach(k=>document.body.style.setProperty("--"+k,mixC(PAIRS[k],curT)));
+      document.body.dataset.t=String(curT);
+    }
+  }else{
+    PKEYS.forEach(k=>document.body.style.setProperty("--"+k,mixC(PAIRS[k],curT)));
+    document.body.dataset.t=curT.toFixed(3);
+  }
+  requestAnimationFrame(themeLoop);
+}
+requestAnimationFrame(themeLoop);
 </script>
 </body>
 </html>
