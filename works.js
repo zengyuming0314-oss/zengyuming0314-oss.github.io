@@ -59,10 +59,9 @@ window.WORKS = [
     "poster": "works/文旅类**Culture & Tourism**/海边旅拍.mp4.poster.jpg"
   },
   {
-    "file": "works/短视频类1. **Short‑form Video**/扫街4.mov",
+    "file": "works/短视频类1. **Short‑form Video**/扫街4.mp4",
     "title": "扫街4",
-    "cat": "短片",
-    "poster": "works/短视频类1. **Short‑form Video**/扫街4.mov.poster.jpg"
+    "cat": "短片"
   },
   {
     "file": "works/短视频类1. **Short‑form Video**/汽车保时捷.mp4",
@@ -71,10 +70,9 @@ window.WORKS = [
     "poster": "works/短视频类1. **Short‑form Video**/汽车保时捷.mp4.poster.jpg"
   },
   {
-    "file": "works/短视频类1. **Short‑form Video**/油菜花2.mov",
+    "file": "works/短视频类1. **Short‑form Video**/油菜花2.mp4",
     "title": "油菜花2",
-    "cat": "短片",
-    "poster": "works/短视频类1. **Short‑form Video**/油菜花2.mov.poster.jpg"
+    "cat": "短片"
   },
   {
     "file": "works/纪录片**Documentary**/南昌纪录片.mp4",
@@ -130,7 +128,7 @@ window.WORKS = [
     "poster": "posters/v05.jpg"
   },
   {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v06.mov",
+    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v06.mp4",
     "title": "涠洲岛产品样片",
     "cat": "宣传片",
     "poster": "posters/v06.jpg"
