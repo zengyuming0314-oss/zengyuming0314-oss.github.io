@@ -6,150 +6,120 @@
 <title>曾钰茗作品集</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎬</text></svg>">
 <style>
-  :root{
-    --bg:#0d0e11; --card:#15171c; --line:#24272e; --text:#eceef2; --muted:#9aa0ac; --accent:#e25555; --accent2:#f0a35e;
-  }
+  :root{--bg:#0d0e11;--card:#15171c;--line:#24272e;--text:#eceef2;--muted:#9aa0ac;--accent:#e25555;--accent2:#f0a35e}
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Segoe UI",Roboto,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
-  .lang-btn{position:fixed;top:16px;right:20px;z-index:90;border:1px solid var(--line);background:rgba(21,23,28,.85);backdrop-filter:blur(8px);color:var(--text);border-radius:999px;padding:5px 15px;font-size:12.5px;cursor:pointer}
-  .lang-btn:hover{border-color:var(--accent)}
-  nav{position:sticky;top:0;z-index:80;background:rgba(13,14,17,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-  .nav-in{display:flex;align-items:center;gap:4px;max-width:1180px;margin:0 auto;padding:0 22px;height:54px;overflow-x:auto}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Segoe UI",Roboto,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .lang-btn{position:fixed;top:14px;right:18px;z-index:90;border:1px solid var(--line);background:rgba(21,23,28,.85);backdrop-filter:blur(8px);color:var(--text);border-radius:999px;padding:5px 14px;font-size:12px;cursor:pointer}
+  nav{position:sticky;top:0;z-index:80;background:rgba(13,14,17,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;gap:2px;max-width:1160px;margin:0 auto;padding:0 22px;height:50px}
   .brand{font-weight:800;letter-spacing:1px;margin-right:auto;white-space:nowrap;font-size:15px}
   .brand small{color:var(--accent)}
-  .nav-item{border:none;background:none;color:var(--muted);padding:8px 13px;font-size:14px;cursor:pointer;white-space:nowrap;border-radius:8px;letter-spacing:.5px}
+  .nav-item{border:none;background:none;color:var(--muted);padding:7px 12px;font-size:13.5px;cursor:pointer;white-space:nowrap;border-radius:8px}
   .nav-item:hover{color:var(--text)}
-  .nav-item.active{color:var(--text);background:var(--card)}
-  .nav-item .no{color:var(--accent);font-size:11px;margin-right:4px;font-family:ui-monospace,monospace}
-  section{display:none;padding:36px 0 70px}
-  section.active{display:block}
-  .h2{font-size:22px;font-weight:800;letter-spacing:2px}
-  .h2 small{color:var(--accent);font-size:13px}
-  .h2sub{color:var(--muted);font-size:13px;margin:4px 0 24px}
-  .about-top{display:flex;gap:30px;align-items:flex-start;flex-wrap:wrap}
-  .about-ava{width:150px;height:150px;border-radius:50%;object-fit:cover;border:2px solid var(--line);flex-shrink:0;background:var(--card)}
-  .about-text{flex:1;min-width:280px}
-  .about-text h3{font-size:28px;letter-spacing:2px}
-  .about-text .role{color:var(--accent2);margin:8px 0 2px;font-size:16px;font-weight:600}
-  .about-text .meta{color:var(--muted);font-size:13px;margin-bottom:14px}
-  .about-text .meta span{margin-right:16px}
-  .about-text p{color:#c9ccd4;font-size:14.5px;margin-bottom:10px}
-  .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-  .tags span{border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-size:12px;color:var(--muted)}
-  .block{margin-top:34px}
-  .block h4{font-size:15px;letter-spacing:1px;color:var(--accent2);margin-bottom:12px}
-  .timeline{position:relative;padding-left:26px}
-  .timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
-  .tl-item{position:relative;padding:0 0 28px}
-  .tl-item::before{content:"";position:absolute;left:-24px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(226,85,85,.2)}
-  .tl-time{font-family:ui-monospace,monospace;font-size:12.5px;color:var(--accent2)}
-  .tl-role{font-weight:700;margin:3px 0 1px;font-size:16px}
-  .tl-org{color:var(--muted);font-size:13.5px;margin-bottom:6px}
-  .tl-desc{color:#c9ccd4;font-size:13.5px;padding-left:18px}
-  .tl-desc li{margin-bottom:3px}
-  .chips{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:14px 0 6px}
-  .chip{border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;padding:6px 15px;font-size:13.5px;cursor:pointer;transition:all .15s;white-space:nowrap}
-  .chip b{font-weight:600}
-  .chip:hover{color:var(--text)}
+  .nav-item .no{color:var(--accent);font-size:11px;margin-right:3px;font-family:ui-monospace,monospace}
+  section{padding:52px 0 8px;scroll-margin-top:58px}
+  .h2{font-size:19px;font-weight:800;letter-spacing:2px;margin-bottom:16px}
+  .h2 small{color:var(--accent);font-size:12px;margin-right:6px}
+  /* 01 关于 */
+  .about{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+  .about img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px solid var(--line);flex-shrink:0}
+  .about .info{flex:1;min-width:240px}
+  .about h1{font-size:26px;letter-spacing:2px}
+  .about .role{color:var(--accent2);font-weight:600;margin:2px 0 6px;font-size:15px}
+  .about .meta{color:var(--muted);font-size:13px}
+  .about .meta span{margin-right:14px;white-space:nowrap}
+  .chips2{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+  .chips2 span{border:1px solid var(--line);border-radius:999px;padding:3px 12px;font-size:11.5px;color:var(--muted)}
+  /* 02 经历 */
+  .job{display:flex;gap:16px;align-items:baseline;padding:10px 0;border-bottom:1px dashed var(--line)}
+  .job:last-child{border-bottom:none}
+  .job .t{font-family:ui-monospace,monospace;font-size:12.5px;color:var(--accent2);min-width:150px}
+  .job .o{font-weight:600;font-size:14.5px}
+  .job .r{color:var(--muted);font-size:13px;margin-left:10px}
+  /* 03 作品 */
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+  .chip{border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;padding:5px 14px;font-size:13px;cursor:pointer}
   .chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
-  .count-line{color:var(--muted);font-size:13px;margin:4px 0 16px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:20px}
-  .card{border-radius:14px;overflow:hidden;background:var(--card);border:1px solid var(--line);cursor:pointer;position:relative;aspect-ratio:16/9;transition:transform .2s,border-color .2s}
-  .card:hover{transform:translateY(-3px);border-color:var(--accent)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;padding:14px 0}
+  .card{border-radius:12px;overflow:hidden;background:var(--card);border:1px solid var(--line);cursor:pointer;position:relative;aspect-ratio:16/9}
+  .card:hover{border-color:var(--accent)}
   .thumb{position:absolute;inset:0;background:#000;overflow:hidden}
   .thumb video,.thumb img{width:100%;height:100%;object-fit:cover}
-  .card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.72))}
-  .cat-tag{position:absolute;top:12px;left:12px;z-index:2;background:rgba(0,0,0,.55);backdrop-filter:blur(5px);border:1px solid rgba(255,255,255,.14);color:#fff;font-size:11.5px;padding:3px 12px;border-radius:999px}
-  .play-ico{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;width:56px;height:56px;border-radius:50%;background:rgba(0,0,0,.5);backdrop-filter:blur(5px);border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#fff;font-size:19px;opacity:0;transition:opacity .2s}
+  .card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.75))}
+  .cat-tag{position:absolute;top:10px;left:10px;z-index:2;background:rgba(0,0,0,.55);color:#fff;font-size:11px;padding:2px 10px;border-radius:999px}
+  .play-ico{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;width:50px;height:50px;border-radius:50%;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;color:#fff;font-size:17px;opacity:0;transition:opacity .2s}
   .card:hover .play-ico{opacity:1;background:var(--accent)}
-  .title{position:absolute;left:14px;right:14px;bottom:11px;z-index:2;color:#fff;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .sub-link{margin:30px 0 4px;border-top:1px solid var(--line);padding-top:20px}
-  .sub-link button{border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:12px;padding:12px 20px;font-size:14px;cursor:pointer}
-  .sub-link button:hover{border-color:var(--accent2)}
-  .img-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin-top:14px}
-  .img-card{border-radius:12px;overflow:hidden;border:1px solid var(--line);cursor:pointer;background:var(--card)}
-  .img-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .25s}
-  .img-card:hover img{transform:scale(1.04)}
-  .img-cap{padding:8px 12px;font-size:12px;color:var(--muted)}
-  .contact-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-top:6px}
-  .c-card{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--card)}
-  .c-card .ic{font-size:26px}
-  .c-card .t{font-weight:700;margin:10px 0 4px}
-  .c-card .v{color:var(--muted);font-size:14px;word-break:break-all}
-  .c-card .v a{color:var(--accent2);text-decoration:none}
-  .empty{padding:60px 20px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:16px;grid-column:1/-1}
-  .lb{position:fixed;inset:0;background:rgba(5,6,8,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:24px}
+  .title{position:absolute;left:12px;right:12px;bottom:9px;z-index:2;color:#fff;font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .img-sub{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
+  .img-toggle{background:none;border:1px dashed var(--line);color:var(--muted);border-radius:10px;padding:9px 18px;font-size:13px;cursor:pointer}
+  .img-toggle:hover{color:var(--text);border-color:var(--accent2)}
+  .img-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:14px}
+  .img-card{border-radius:10px;overflow:hidden;border:1px solid var(--line);cursor:pointer;background:var(--card)}
+  .img-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+  .img-cap{padding:6px 10px;font-size:11.5px;color:var(--muted)}
+  /* 04 联系 */
+  .contact{display:flex;gap:14px;flex-wrap:wrap;padding-bottom:40px}
+  .c-item{border:1px solid var(--line);border-radius:12px;padding:14px 20px;background:var(--card);min-width:200px}
+  .c-item .k{font-size:12px;color:var(--muted)}
+  .c-item .v{font-size:15px;font-weight:600;margin-top:3px}
+  .c-item .v a{color:var(--accent2);text-decoration:none}
+  footer{border-top:1px solid var(--line);padding:20px 0 34px;text-align:center;color:var(--muted);font-size:12px}
+  .empty{padding:50px 20px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}
+  .lb{position:fixed;inset:0;background:rgba(5,6,8,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:22px}
   .lb.open{display:flex}
-  .lb-box{max-width:min(1060px,92vw);width:100%;max-height:90vh;background:#000;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+  .lb-box{max-width:min(1040px,92vw);width:100%;max-height:90vh;background:#000;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
   .lb-media{flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
-  .lb-media video,.lb-media img{max-width:100%;max-height:calc(90vh - 96px)}
-  .lb-info{padding:11px 18px;display:flex;background:var(--card)}
-  .lb-info h3{font-size:14px;flex:1}
+  .lb-media video,.lb-media img{max-width:100%;max-height:calc(90vh - 90px)}
+  .lb-info{padding:10px 16px;background:var(--card)}
+  .lb-info h3{font-size:13.5px}
   .lb-close{position:fixed;top:14px;right:22px;font-size:30px;color:#fff;background:none;border:none;cursor:pointer;z-index:101}
-  .lb-prev,.lb-next{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);color:#fff;width:46px;height:46px;border-radius:50%;font-size:18px;cursor:pointer;z-index:101}
-  .lb-prev{left:14px}.lb-next{right:14px}
-  footer{border-top:1px solid var(--line);padding:24px 0 36px;text-align:center;color:var(--muted);font-size:12.5px}
-  @media(max-width:640px){.grid{grid-template-columns:1fr 1fr;gap:10px}.about-ava{width:110px;height:110px}}
+  .lb-prev,.lb-next{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);color:#fff;width:44px;height:44px;border-radius:50%;font-size:17px;cursor:pointer;z-index:101}
+  .lb-prev{left:12px}.lb-next{right:12px}
+  @media(max-width:640px){.grid{grid-template-columns:1fr 1fr;gap:10px}.job .t{min-width:110px}}
 </style>
 </head>
 <body>
-
 <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
 <nav>
   <div class="nav-in">
-    <span class="brand">曾钰茗<small> · Portfolio</small></span>
-    <button class="nav-item active" data-sec="about" onclick="go('about')"><span class="no">01</span><span class="nl" data-k="about">自我介绍</span></button>
-    <button class="nav-item" data-sec="career" onclick="go('career')"><span class="no">02</span><span class="nl" data-k="career">工作经历</span></button>
-    <button class="nav-item" data-sec="works" onclick="go('works')"><span class="no">03</span><span class="nl" data-k="works">作品</span></button>
-    <button class="nav-item" data-sec="contact" onclick="go('contact')"><span class="no">04</span><span class="nl" data-k="contact">联系方式</span></button>
+    <span class="brand">曾钰茗<small> · PF</small></span>
+    <button class="nav-item" onclick="jump('s-about')"><span class="no">01</span><span data-k="about">简介</span></button>
+    <button class="nav-item" onclick="jump('s-career')"><span class="no">02</span><span data-k="career">经历</span></button>
+    <button class="nav-item" onclick="jump('s-works')"><span class="no">03</span><span data-k="works">作品</span></button>
+    <button class="nav-item" onclick="jump('s-contact')"><span class="no">04</span><span data-k="contact">联系</span></button>
   </div>
 </nav>
 
 <main class="wrap">
-  <section id="sec-about" class="active">
-    <div class="h2"><small>01</small> <span class="nl" data-k="about"></span></div>
-    <div class="h2sub" data-i18n-key="aboutSub"></div>
-    <div class="about-top">
-      <img class="about-ava" src="avatar.jpg" alt="avatar" onerror="this.style.display='none'">
-      <div class="about-text">
-        <h3 id="aName">曾钰茗</h3>
-        <div class="role" data-i18n-key="objective"></div>
-        <div class="meta" id="aMeta"></div>
-        <p data-i18n-key="overview1"></p>
-        <p data-i18n-key="overview2"></p>
-        <div class="tags" id="aTags"></div>
+  <section id="s-about">
+    <div class="about">
+      <img src="avatar.jpg" alt="avatar" onerror="this.style.display='none'">
+      <div class="info">
+        <h1 data-k="name">曾钰茗</h1>
+        <div class="role" data-k="objective"></div>
+        <div class="meta" data-k="meta"></div>
+        <div class="chips2" data-k="skills"></div>
       </div>
     </div>
-    <div class="block">
-      <h4 data-i18n-key="skillsT"></h4>
-      <div class="tags" id="aSkills"></div>
-    </div>
-    <div class="block">
-      <h4 data-i18n-key="selfT"></h4>
-      <p style="color:#c9ccd4;font-size:14.5px" data-i18n-key="selfEval"></p>
-    </div>
   </section>
 
-  <section id="sec-career">
-    <div class="h2"><small>02</small> <span class="nl" data-k="career"></span></div>
-    <div class="h2sub" data-i18n-key="careerSub"></div>
-    <div class="timeline" id="timeline"></div>
+  <section id="s-career">
+    <div class="h2"><small>02</small><span data-k="careerT"></span></div>
+    <div id="jobs"></div>
   </section>
 
-  <section id="sec-works">
-    <div class="h2"><small>03</small> <span class="nl" data-k="works"></span></div>
-    <div class="h2sub" id="worksSub"></div>
-    <div id="worksMain"></div>
-    <div class="sub-link"><button id="imgSubBtn"></button></div>
-    <div id="imgSub"></div>
+  <section id="s-works">
+    <div class="h2"><small>03</small><span data-k="worksT"></span></div>
+    <div class="chips" id="chips"></div>
+    <div class="grid" id="grid"></div>
+    <div class="img-sub"><button class="img-toggle" id="imgBtn"></button><div id="imgSub"></div></div>
   </section>
 
-  <section id="sec-contact">
-    <div class="h2"><small>04</small> <span class="nl" data-k="contact"></span></div>
-    <div class="h2sub" data-i18n-key="contactSub"></div>
-    <div class="contact-cards" id="contactCards"></div>
+  <section id="s-contact">
+    <div class="h2"><small>04</small><span data-k="contactT"></span></div>
+    <div class="contact" id="contact"></div>
   </section>
 </main>
 
@@ -164,132 +134,83 @@
 
 <script src="works.js"></script>
 <script>
-/* ================= 简历内容（中/英） ================= */
 const D={
-zh:{about:"自我介绍",career:"工作经历",works:"作品",contact:"联系方式",
-  aboutSub:"曾钰茗 · 短视频拍摄剪辑 / 内容运营",
-  objective:"短视频拍摄剪辑 · 内容运营",
-  meta:"📍 广西桂林 &nbsp;·&nbsp; 🎂 2002.02 &nbsp;·&nbsp; 🎓 北海职业学院 · 影视传媒 &nbsp;·&nbsp; 📞 18969806453 &nbsp;·&nbsp; ✉️ 2556631157@qq.com",
-  overview1:"3 年以上短视频拍摄、剪辑与账号运营经验，覆盖电商信息流、达人短剧、文旅及汽车销售等内容场景。能独立完成选题与脚本拆解、分镜设计、现场拍摄、后期包装和账号内容维护。",
-  overview2:"善于运用 AI 视频生成及智能创作工具辅助内容生产，具备爆款内容分析与复盘意识——曾单月产出 8 条爆款视频。",
-  skillsT:"专业技能",
-  skills:["短视频拍摄与剪辑","分镜设计","灯光布景","录音收音","文案撰写","账号运营","数据分析","AI 视频生成","AI 辅助创作","Premiere Pro","After Effects","Photoshop","DaVinci Resolve","Final Cut Pro X","剪映","信息流 / 电商 / 口播 / 短剧 / 宣传片 / 纪录片 / 美食 / 汽车"],
-  selfT:"自我评价",
-  selfEval:"工作认真主动，具备较强的执行力、学习能力与团队协作意识。关注内容趋势和用户反馈，能够在快节奏项目中持续复盘并优化拍摄与剪辑方案。",
-  careerSub:"我的工作经历",
-  jobs:[
-    {time:"2023.08 — 至今",org:"桂林七少汽车销售服务有限公司",role:"拍摄剪辑",d:["负责企业短视频账号的日常内容运营与维护，围绕业务需求策划、拍摄并发布内容","独立完成短视频创作与后期制作：分镜梳理、镜头语言把控、剪辑及基础包装","使用相机、稳定器和灯光设备完成拍摄执行，保障内容产出效率与画面质量"]},
-    {time:"2023.04 — 2023.08",org:"广西来也文化传媒",role:"拍摄剪辑运营",d:["参与公司账号运营策划，分析爆款内容与同行案例，协助提炼选题方向和文案表达","负责项目拍摄、剪辑及宣发运营执行；服务账号「桂林包猪婆」「云游也是游」「来也文化」"]},
-    {time:"2022.08 — 2023.01",org:"广州星拓传媒",role:"拍摄剪辑",d:["负责抖音短剧达人账号的拍摄与剪辑，参与剧本分镜设计并把控镜头语言","围绕音乐、色彩与节奏进行素材搜集和后期包装，提升短剧内容的叙事与观看体验"]},
-    {time:"2022.01 — 2022.08",org:"广州再酷一点传媒",role:"摄影剪辑",d:["负责首饰电商信息流视频拍摄与剪辑，完成产品上身展示等内容制作；服务账号「卡铂雅」","持续分析爆款产品与同类视频表现并迭代内容，单月产出 8 条爆款视频"]}
-  ],
-  contactSub:"欢迎合作与交流",
-  contact:[{ic:"📱",t:"电话",v:"18969806453"},{ic:"📧",t:"邮箱",v:"2556631157@qq.com"},{ic:"📍",t:"所在地",v:"广西桂林"}],
-  imgSub:"运营数据（图片）", all:"全部", worksN:"部作品", play:"点击播放", none:"暂无作品", imgNone:"暂无图片",btn:"EN"},
-en:{about:"About",career:"Experience",works:"Works",contact:"Contact",
-  aboutSub:"Zeng Yuming · Short-video shooting, editing & content operations",
-  objective:"Short-Video Shooting & Editing · Content Operations",
-  meta:"📍 Guilin, Guangxi · 🎂 2002.02 · 🎓 Beihai Vocational College — Film & Media · 📞 18969806453 · ✉️ 2556631157@qq.com",
-  overview1:"3+ years in short-video shooting, editing and account operations across e-commerce feeds, influencer mini-dramas, travel & auto-sales content. Comfortable handling topic selection, script breakdown, storyboards, on-site shooting, post-production and account maintenance.",
-  overview2:"Skilled at using AI video-generation tools to speed up production, with strong viral-content analysis habits — once produced 8 viral videos in a single month.",
-  skillsT:"Skills",
-  skills:["Short-video shooting & editing","Storyboarding","Lighting & set","Recording","Copywriting","Account operations","Data analysis","AI video generation","AI-assisted creation","Premiere Pro","After Effects","Photoshop","DaVinci Resolve","Final Cut Pro X","JianYing","Feeds / E-commerce / Vlog / Drama / Promo / Documentary / Food / Auto"],
-  selfT:"Self Evaluation",
-  selfEval:"Proactive and detail-oriented with strong execution, learning and teamwork. Keeps an eye on content trends and user feedback, and iterates quickly on shooting & editing approaches.",
-  careerSub:"Work Experience",
-  jobs:[
-    {time:"2023.08 — Present",org:"Guilin Qishao Auto Sales",role:"Camera & Editing",d:["Runs daily content ops of the company's short-video accounts: planning, shooting and publishing around business goals","Handles full creative & post pipeline: storyboards, shot language, editing and basic packaging","Shoots with camera, gimbal and lighting rigs to keep output fast and polished"]},
-    {time:"2023.04 — 2023.08",org:"Guangxi Laiye Culture Media",role:"Shooting / Editing / Ops",d:["Joined account strategy: studied viral & competitor content to sharpen topics and scripts","Executed shooting, editing and launch operations for accounts incl. “Guilin Baozhupo”, “Yunyou Yeshi You”, “Laiye Culture”"]},
-    {time:"2022.08 — 2023.01",org:"Guangzhou Xintuo Media",role:"Camera & Editing",d:["Shot and edited Douyin mini-drama creator accounts; contributed to script storyboards and shot language","Curated footage and post-packaging around music, color and rhythm to lift narrative quality"]},
-    {time:"2022.01 — 2022.08",org:"Guangzhou Zaiku Yidian Media",role:"Photography & Editing",d:["Shot and edited e-commerce feed videos for jewelry (product showcase), serving account “Cabuya”","Kept iterating against viral products and benchmark videos — 8 viral videos in one month"]}
-  ],
-  contactSub:"Open to cooperation",
-  contact:[{ic:"📱",t:"Phone",v:"18969806453"},{ic:"📧",t:"Email",v:"2556631157@qq.com"},{ic:"📍",t:"Location",v:"Guilin, Guangxi"}],
-  imgSub:"Analytics (images)", all:"All", worksN:"works", play:"Click to play", none:"No works yet", imgNone:"No images yet",btn:"中"}
+zh:{name:"曾钰茗",objective:"短视频拍摄剪辑 · 内容运营",meta:"📍广西桂林 · 🎂2002 · 🎓北海职院·影视传媒 · 📞18969806453 · ✉️2556631157@qq.com",
+  skills:["拍剪运营3年+","文旅/宣传/短剧/电商","AI辅助创作","单月8条爆款","PR · AE · PS · 达芬奇 · 剪映"],
+  careerT:"工作经历",
+  jobs:[["2023.08 — 今","桂林七少汽车销售","拍摄剪辑"],["2023.04 — 2023.08","广西来也文化传媒","拍摄剪辑运营"],["2022.08 — 2023.01","广州星拓传媒","拍摄剪辑"],["2022.01 — 2022.08","广州再酷一点传媒","摄影剪辑"]],
+  worksT:"作品",all:"全部",worksN:"个",imgBtn:"📊 运营数据图片",imgNone:"暂无",none:"暂无",contactT:"联系方式",
+  contact:[["📱","电话","18969806453"],["📧","邮箱","2556631157@qq.com"],["📍","所在地","广西桂林"]],btn:"EN",about:"简介",career:"经历",works:"作品",contact:"联系"},
+en:{name:"Zeng Yuming",objective:"Short-Video Shooting & Editing · Content Ops",meta:"📍Guilin, Guangxi · 🎂2002 · 🎓Beihai Voc. Film & Media · 📞18969806453 · ✉️2556631157@qq.com",
+  skills:["3+ yrs shoot/edit/ops","Travel/Promo/Drama/E-com","AI-assisted creation","8 viral videos / month","PR · AE · PS · Resolve · FCPX · JY"],
+  careerT:"Experience",
+  jobs:[["2023.08 — Now","Guilin Qishao Auto Sales","Camera & Editing"],["2023.04 — 2023.08","Laiye Culture Media","Shoot / Edit / Ops"],["2022.08 — 2023.01","Guangzhou Xintuo Media","Camera & Editing"],["2022.01 — 2022.08","Guangzhou Zaiku Yidian","Photo & Editing"]],
+  worksT:"Works",all:"All",worksN:"",imgBtn:"📊 Analytics (images)",imgNone:"None yet",none:"None yet",contactT:"Contact",
+  contact:[["📱","Phone","18969806453"],["📧","Email","2556631157@qq.com"],["📍","Location","Guilin, Guangxi"]],btn:"中",about:"About",career:"Career",works:"Works",contact:"Contact"}
 };
 let lang=localStorage.getItem("pf_lang")||(navigator.language&&navigator.language.toLowerCase().startsWith("zh")?"zh":"en");
 const T=()=>D[lang];
 const RAW=(window.WORKS||[]).map(w=>Object.assign({cat:"未分类"},w));
 const isVid=f=>/\.(mp4|mov|webm|m4v)$/i.test(f);
-const TAG_RULES=[[/个人ip/i,"人物IP","Personal IP"],[/文旅/i,"文旅","Travel"],[/宣传|招商/i,"宣传片","Promo"],[/访谈/i,"商业访谈","Interview"],[/纪录片/i,"纪录片","Documentary"],[/短视频|短片/i,"短片","Short Film"],[/AI创作|ai创作/i,"AIGC","AIGC"],[/运营数据/i,"运营数据","Analytics"]];
-function zhTag(cat){const b=cat.replace(/\*\*/g," ").replace(/^[\d.\s\u00b7·\-]+/,"").trim();for(const r of TAG_RULES){if(r[0].test(cat)||r[0].test(b))return r[1];}return b;}
-function tagOf(cat){const b=cat.replace(/\*\*/g," ").replace(/^[\d.\s\u00b7·\-]+/,"").trim();for(const r of TAG_RULES){if(r[0].test(cat)||r[0].test(b))return lang==="en"?r[2]:r[1];}return b;}
-const isImgCat=c=>/运营数据|Analytics/i.test(c);
-const VIDS=RAW.filter(w=>!isImgCat(w.cat));
-const IMGS=RAW.filter(w=>isImgCat(w.cat));
+const RULES=[[/个人ip/i,"人物IP","Personal IP"],[/文旅/i,"文旅","Travel"],[/宣传|招商/i,"宣传片","Promo"],[/访谈/i,"访谈","Interview"],[/纪录片/i,"纪录片","Doc"],[/短视频|短片/i,"短片","Short"],[/AI创作|ai创作/i,"AIGC","AIGC"],[/运营数据/i,"运营数据","Data"]];
+function zhTag(c){const b=c.replace(/\*\*/g," ").replace(/^[\d.\s\u00b7·\-]+/,"").trim();for(const r of RULES){if(r[0].test(c)||r[0].test(b))return r[1];}return b;}
+function tagOf(c){const b=c.replace(/\*\*/g," ").replace(/^[\d.\s\u00b7·\-]+/,"").trim();for(const r of RULES){if(r[0].test(c)||r[0].test(b))return lang==="en"?r[2]:r[1];}return b;}
+const VIDS=RAW.filter(w=>!/运营数据|Analytics/i.test(w.cat));
+const IMGS=RAW.filter(w=>/运营数据|Analytics/i.test(w.cat));
 const CATS={};VIDS.forEach(w=>{(CATS[w.cat]=CATS[w.cat]||[]).push(w);});
-const CAT_ORDER=["纪录片","短片","人物IP","文旅","宣传片","AIGC","商业访谈"];
-const sortedKeys=Object.keys(CATS).sort((a,b)=>{const ra=CAT_ORDER.indexOf(zhTag(a)),rb=CAT_ORDER.indexOf(zhTag(b));return(ra<0?99:ra)-(rb<0?99:rb)||a.localeCompare(b,"zh");});
+const ORDER=["纪录片","短片","人物IP","文旅","宣传片","AIGC","访谈"];
+const sortedKeys=Object.keys(CATS).sort((a,b)=>{const ra=ORDER.indexOf(zhTag(a)),rb=ORDER.indexOf(zhTag(b));return(ra<0?99:ra)-(rb<0?99:rb)||a.localeCompare(b,"zh");});
 
-/* ===== 导航 ===== */
-function go(sec){
-  document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
-  document.getElementById("sec-"+sec).classList.add("active");
-  document.querySelectorAll(".nav-item").forEach(n=>n.classList.toggle("active",n.dataset.sec===sec));
-  window.scrollTo({top:0,behavior:"instant"});
-  if(sec==="works")renderWorks();
-}
-/* ===== 渲染 ===== */
-function renderContent(){
+/* 语言切换 */
+function renderStatic(){
   const d=T();
-  document.querySelectorAll("[data-i18n-key]").forEach(el=>{const k=el.dataset.i18nKey;if(d[k]!==undefined)el.innerHTML=d[k];});
-  document.querySelectorAll(".nl").forEach(el=>{el.textContent=d[el.dataset.k];});
-  document.getElementById("aMeta").innerHTML=d.meta;
-  document.getElementById("aTags").innerHTML=d.skills.map(s=>`<span>${s}</span>`).join("");
-  document.getElementById("aSkills").innerHTML=d.skills.map(s=>`<span>${s}</span>`).join("");
-  document.getElementById("timeline").innerHTML=d.jobs.map(j=>`<div class="tl-item"><div class="tl-time">${j.time}</div><div class="tl-role">${j.role}</div><div class="tl-org">${j.org}</div><ul class="tl-desc">${j.d.map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("");
-  document.getElementById("contactCards").innerHTML=d.contact.map(c=>`<div class="c-card"><div class="ic">${c.ic}</div><div class="t">${c.t}</div><div class="v">${c.v.includes("@")?`<a href="mailto:${c.v}">${c.v}</a>`:c.v}</div></div>`).join("");
+  document.querySelectorAll("[data-k]").forEach(el=>{const k=el.dataset.k;if(d[k]!==undefined)el.textContent=d[k];});
+  if(typeof d.skills==="string")document.querySelector("[data-k=skills]").innerHTML=d.skills.split(",").map(s=>`<span>${s}</span>`).join("");
+  document.getElementById("jobs").innerHTML=d.jobs.map(j=>`<div class="job"><div class="t">${j[0]}</div><div class="o">${j[1]}</div><div class="r">${j[2]}</div></div>`).join("");
+  document.getElementById("contact").innerHTML=d.contact.map(c=>`<div class="c-item"><div class="k">${c[1]}</div><div class="v">${/@/.test(c[2])?`<a href="mailto:${c[2]}">${c[2]}</a>`:c[2]}</div></div>`).join("");
   document.getElementById("langBtn").textContent=d.btn;
-  document.getElementById("imgSubBtn").textContent="📊 "+d.imgSub;
+  document.getElementById("imgBtn").textContent=d.imgBtn;
+  renderChips();renderGrid();renderImgBtn();
 }
-let activeCat="all",imgOpen=false;
-function renderWorks(){
+/* 作品 */
+let activeCat="all",imgOn=false;
+function renderChips(){
   const d=T();
-  document.getElementById("worksSub").textContent=d.play+" · "+VIDS.length+" "+d.worksN;
-  const m=document.getElementById("worksMain");
-  m.innerHTML=`<div class="chips" id="chips"></div><div class="count-line" id="countLine"></div><div class="grid" id="grid"></div>`;
-  const chips=document.getElementById("chips");
-  chips.innerHTML=[`<span class="chip active" data-c="all"><b>${d.all}</b> ${VIDS.length}</span>`].concat(sortedKeys.map(k=>`<span class="chip" data-c="${k}"><b>${tagOf(k)}</b> ${CATS[k].length}</span>`)).join("");
-  chips.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{chips.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));c.classList.add("active");activeCat=c.dataset.c;renderGrid();}));
-  renderGrid();
-  document.getElementById("imgSubBtn").onclick=()=>{imgOpen=!imgOpen;renderImgSub();};
-  renderImgSub();
+  const el=document.getElementById("chips");
+  el.innerHTML=[`<span class="chip active" data-c="all">${d.all} ${VIDS.length}</span>`].concat(sortedKeys.map(k=>`<span class="chip" data-c="${k}">${tagOf(k)} ${CATS[k].length}</span>`)).join("");
+  el.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{el.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));c.classList.add("active");activeCat=c.dataset.c;renderGrid();}));
 }
 function renderGrid(){
   const d=T();const list=activeCat==="all"?VIDS:(CATS[activeCat]||[]);
-  document.getElementById("countLine").textContent=list.length+" "+d.worksN;
   const g=document.getElementById("grid");
   if(!list.length){g.innerHTML=`<div class="empty">${d.none}</div>`;return;}
-  g.innerHTML=list.map((w,i)=>`<div class="card" data-i="${i}"><div class="thumb">${w.poster?`<img src="${w.poster}">`:(isVid(w.file)?`<video muted preload="metadata" src="${w.file}"></video>`:`<img src="${w.file}">`)}</div><span class="cat-tag">${tagOf(w.cat)}</span><span class="play-ico">▶</span><span class="title">${w.title||""}</span></div>`).join("");
-  g.querySelectorAll(".card").forEach(cd=>cd.addEventListener("click",()=>openLb(+cd.dataset.i,"vids")));
+  g.innerHTML=list.map((w,i)=>`<div class="card" data-i="${i}"><div class="thumb">${isVid(w.file)?`<video muted preload="metadata" src="${w.file}"></video>`:`<img src="${w.file}">`}</div><span class="cat-tag">${tagOf(w.cat)}</span><span class="play-ico">▶</span><span class="title">${w.title||""}</span></div>`).join("");
+  g.querySelectorAll(".card").forEach(cd=>cd.addEventListener("click",()=>openLb(+cd.dataset.i,"v")));
 }
-function renderImgSub(){
-  const d=T();const box=document.getElementById("imgSub");const btn=document.getElementById("imgSubBtn");
-  btn.textContent="📊 "+d.imgSub+(imgOpen?" ▲":" ▶");
-  if(!imgOpen){box.innerHTML="";return;}
-  if(!IMGS.length){box.innerHTML=`<div class="empty">${d.imgNone}</div>`;return;}
-  box.innerHTML=`<div class="img-grid">${IMGS.map((w,i)=>`<div class="img-card" data-i="${i}"><img src="${w.file}" loading="lazy"><div class="img-cap">${w.title||""}</div></div>`).join("")}</div>`;
-  box.querySelectorAll(".img-card").forEach(cd=>cd.addEventListener("click",()=>openLb(+cd.dataset.i,"imgs")));
+function renderImgBtn(){
+  const b=document.getElementById("imgBtn");
+  b.textContent=T().imgBtn+(imgOn?" ▲":" ▶");
+  b.onclick=()=>{imgOn=!imgOn;renderImgBtn();const s=document.getElementById("imgSub");
+    if(!imgOn){s.innerHTML="";return;}
+    s.innerHTML=IMGS.length?`<div class="img-grid">${IMGS.map((w,i)=>`<div class="img-card" data-i="${i}"><img src="${w.file}" loading="lazy"><div class="img-cap">${w.title||""}</div></div>`).join("")}</div>`:`<div class="empty">${T().imgNone}</div>`;
+    s.querySelectorAll(".img-card").forEach(cd=>cd.addEventListener("click",()=>openLb(+cd.dataset.i,"i")));};
 }
-/* ===== 灯箱 ===== */
-const lb=document.getElementById("lb"),lbMedia=document.getElementById("lbMedia"),lbTitle=document.getElementById("lbTitle");
-let mode="vids",cur=-1;
-function listOf(){return mode==="vids"?VIDS:IMGS;}
-function openLb(i,m){mode=m||"vids";const v=listOf();if(!v[i])return;cur=i;const w=v[i];
-  lbMedia.innerHTML=isVid(w.file)?`<video src="${w.file}" controls autoplay playsinline></video>`:`<img src="${w.file}">`;
-  lbTitle.textContent=w.title||"";lb.classList.add("open");}
-document.getElementById("lbClose").onclick=()=>{lb.classList.remove("open");lbMedia.innerHTML="";};
-lb.addEventListener("click",e=>{if(e.target===lb){lb.classList.remove("open");lbMedia.innerHTML="";}});
+/* 灯箱 */
+const lb=document.getElementById("lb"),lbM=document.getElementById("lbMedia"),lbT=document.getElementById("lbTitle");
+let mode="v",cur=-1;
+const listOf=()=>mode==="v"?VIDS:IMGS;
+function openLb(i,m){mode=m;const v=listOf();if(!v[i])return;cur=i;const w=v[i];
+  lbM.innerHTML=isVid(w.file)?`<video src="${w.file}" controls autoplay playsinline></video>`:`<img src="${w.file}">`;
+  lbT.textContent=w.title||"";lb.classList.add("open");}
+document.getElementById("lbClose").onclick=()=>{lb.classList.remove("open");lbM.innerHTML="";};
+lb.addEventListener("click",e=>{if(e.target===lb){lb.classList.remove("open");lbM.innerHTML="";}});
 document.getElementById("lbPrev").onclick=e=>{e.stopPropagation();const v=listOf();openLb((cur-1+v.length)%v.length,mode);};
 document.getElementById("lbNext").onclick=e=>{e.stopPropagation();const v=listOf();openLb((cur+1)%v.length,mode);};
-document.addEventListener("keydown",e=>{if(!lb.classList.contains("open"))return;
-  if(e.key==="Escape")document.getElementById("lbClose").click();
-  if(e.key==="ArrowLeft")document.getElementById("lbPrev").click();
-  if(e.key==="ArrowRight")document.getElementById("lbNext").click();});
-/* ===== 语言切换 ===== */
-function toggleLang(){lang=lang==="zh"?"en":"zh";localStorage.setItem("pf_lang",lang);renderContent();if(document.getElementById("sec-works").classList.contains("active"))renderWorks();}
+document.addEventListener("keydown",e=>{if(!lb.classList.contains("open"))return;if(e.key==="Escape")document.getElementById("lbClose").click();if(e.key==="ArrowLeft")document.getElementById("lbPrev").click();if(e.key==="ArrowRight")document.getElementById("lbNext").click();});
+function jump(id){document.getElementById(id).scrollIntoView({behavior:"smooth"});}
+function toggleLang(){lang=lang==="zh"?"en":"zh";localStorage.setItem("pf_lang",lang);renderStatic();renderImgBtn();}
 document.getElementById("year").textContent=new Date().getFullYear();
-renderContent();renderWorks();
+renderStatic();
 </script>
 </body>
 </html>
