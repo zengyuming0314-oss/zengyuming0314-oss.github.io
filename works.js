@@ -1,5 +1,10 @@
 window.WORKS = [
   {
+    "file": "works/AIGC/米娅波布一家.mp4",
+    "title": "米娅波布一家",
+    "cat": "AIGC"
+  },
+  {
     "file": "works/一些短视频运营数据 — **Short‑video Operation Data**/0768e28954714a7b15b77d27407b48a6.PNG",
     "title": "0768e28954714a7b15b77d27407b48a6",
     "cat": "运营数据"
@@ -47,16 +52,81 @@ window.WORKS = [
     "poster": "works/个人ip类型**Personal IP Content**/2026-07-10 150702.mp4.poster.jpg"
   },
   {
+    "file": "works/人物IP/2月12日.mp4",
+    "title": "2月12日",
+    "cat": "人物IP"
+  },
+  {
+    "file": "works/人物IP/2月16日.mp4",
+    "title": "2月16日",
+    "cat": "人物IP"
+  },
+  {
+    "file": "works/人物IP/3月2日.mp4",
+    "title": "3月2日",
+    "cat": "人物IP"
+  },
+  {
+    "file": "works/人物IP/8月3日.mp4",
+    "title": "8月3日",
+    "cat": "人物IP"
+  },
+  {
+    "file": "works/宣传片/5G智慧生态农业科技产业园招商片.mp4",
+    "title": "5G智慧生态农业科技产业园招商片",
+    "cat": "宣传片"
+  },
+  {
+    "file": "works/宣传片/涠洲岛产品样片.mp4",
+    "title": "涠洲岛产品样片",
+    "cat": "宣传片"
+  },
+  {
+    "file": "works/宣传片/雁山基地宣传片.mp4",
+    "title": "雁山基地宣传片",
+    "cat": "宣传片"
+  },
+  {
     "file": "works/宣传类**Promotional**/开业.mp4",
     "title": "开业",
     "cat": "宣传片",
     "poster": "works/宣传类**Promotional**/开业.mp4.poster.jpg"
   },
   {
+    "file": "works/文旅/冬日全州.mp4",
+    "title": "冬日全州",
+    "cat": "文旅"
+  },
+  {
+    "file": "works/文旅/天湖短视频.mp4",
+    "title": "天湖短视频",
+    "cat": "文旅"
+  },
+  {
+    "file": "works/文旅/文旅片.mp4",
+    "title": "文旅片",
+    "cat": "文旅"
+  },
+  {
+    "file": "works/文旅/春茶短片.mp4",
+    "title": "春茶短片",
+    "cat": "文旅"
+  },
+  {
     "file": "works/文旅类**Culture & Tourism**/海边旅拍.mp4",
     "title": "海边旅拍",
     "cat": "文旅",
     "poster": "works/文旅类**Culture & Tourism**/海边旅拍.mp4.poster.jpg"
+  },
+  {
+    "file": "works/短片/咖喱龙虾.mp4",
+    "title": "咖喱龙虾",
+    "cat": "短片"
+  },
+  {
+    "file": "works/短片/文旅创作.mp4",
+    "title": "文旅创作",
+    "cat": "短片"
   },
   {
     "file": "works/短视频类1. **Short‑form Video**/扫街4.mp4",
@@ -73,6 +143,16 @@ window.WORKS = [
     "file": "works/短视频类1. **Short‑form Video**/油菜花2.mp4",
     "title": "油菜花2",
     "cat": "短片"
+  },
+  {
+    "file": "works/纪录片/云南美食纪录片.mp4",
+    "title": "云南美食纪录片",
+    "cat": "纪录片"
+  },
+  {
+    "file": "works/纪录片/纪录片.mp4",
+    "title": "纪录片",
+    "cat": "纪录片"
   },
   {
     "file": "works/纪录片**Documentary**/南昌纪录片.mp4",
@@ -93,122 +173,18 @@ window.WORKS = [
     "poster": "works/纪录片**Documentary**/贝雕纪录片.mp4.poster.jpg"
   },
   {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-01/9.7.mp4",
-    "title": "9月7日猫咪家族第一集",
-    "cat": "AIGC"
-  },
-  {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v01.mp4",
-    "title": "2月12日",
-    "cat": "人物IP",
-    "poster": "posters/v01.jpg"
-  },
-  {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v02.mp4",
-    "title": "2月16日",
-    "cat": "人物IP",
-    "poster": "posters/v02.jpg"
-  },
-  {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v03.mp4",
-    "title": "3月2日",
-    "cat": "人物IP",
-    "poster": "posters/v03.jpg"
-  },
-  {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v04.mp4",
-    "title": "8月3日",
-    "cat": "人物IP",
-    "poster": "posters/v04.jpg"
-  },
-  {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v05.mp4",
-    "title": "5G智慧生态农业科技产业园招商片",
-    "cat": "宣传片",
-    "poster": "posters/v05.jpg"
-  },
-  {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v06.mp4",
-    "title": "涠洲岛产品样片",
-    "cat": "宣传片",
-    "poster": "posters/v06.jpg"
-  },
-  {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v07.mp4",
-    "title": "雁山基地宣传片",
-    "cat": "宣传片",
-    "poster": "posters/v07.jpg"
-  },
-  {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v08.mov",
-    "title": "冬日全州",
-    "cat": "文旅",
-    "poster": "posters/v08.jpg"
-  },
-  {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v09.mov",
-    "title": "天湖短视频",
-    "cat": "文旅",
-    "poster": "posters/v09.jpg"
-  },
-  {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v10.mp4",
-    "title": "文旅片",
-    "cat": "文旅",
-    "poster": "posters/v10.jpg"
-  },
-  {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v11.mp4",
-    "title": "春茶短片",
-    "cat": "文旅",
-    "poster": "posters/v11.jpg"
-  },
-  {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v12.mp4",
-    "title": "咖喱龙虾",
-    "cat": "短片",
-    "poster": "posters/v12.jpg"
-  },
-  {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v13.mp4",
-    "title": "文旅创作",
-    "cat": "短片",
-    "poster": "posters/v13.jpg"
-  },
-  {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v14.mp4",
-    "title": "云南美食纪录片",
-    "cat": "纪录片",
-    "poster": "posters/v14.jpg"
-  },
-  {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v15.mp4",
-    "title": "纪录片",
-    "cat": "纪录片",
-    "poster": "posters/v15.jpg"
-  },
-  {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v16.mp4",
+    "file": "works/访谈/11月19日.mp4",
     "title": "11月19日",
-    "cat": "访谈",
-    "poster": "posters/v16.jpg"
+    "cat": "访谈"
   },
   {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v17.mp4",
+    "file": "works/访谈/11月9日(1).mp4",
     "title": "11月9日(1)",
-    "cat": "访谈",
-    "poster": "posters/v17.jpg"
+    "cat": "访谈"
   },
   {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v18.mp4",
+    "file": "works/访谈/最终无水印.mp4",
     "title": "最终无水印",
-    "cat": "访谈",
-    "poster": "posters/v18.jpg"
-  },
-  {
-    "file": "https://github.com/zengyuming0314-oss/zengyuming0314-oss.github.io/releases/download/portfolio-videos-02/v19.mp4",
-    "title": "米娅波布一家",
-    "cat": "AIGC",
-    "poster": "posters/v19.jpg"
+    "cat": "访谈"
   }
 ];
