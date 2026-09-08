@@ -119,12 +119,22 @@ function tagOf(cat){
 const CATS={}; RAW.forEach(w=>{ (CATS[w.cat]=CATS[w.cat]||[]).push(w); });
 const keys=Object.keys(CATS);
 
+/* 自定义分类排序：纪录片→短片→人物IP→文旅→宣传→AIGC→商业访谈→运营数据(最后) */
+const CAT_ORDER=["纪录片","短片","人物IP","文旅","宣传片","AIGC","商业访谈","运营数据"];
+function zhTag(cat){
+  const base=cat.replace(/\*\*/g," ").replace(/^[\d.\s\u00b7·\-]+/,"").trim();
+  for(const [re,zh] of TAG_RULES){ if(re.test(cat)||re.test(base)) return zh; }
+  return base;
+}
+const sortedKeys=[...keys].sort((a,b)=>{const ra=CAT_ORDER.indexOf(zhTag(a)),rb=CAT_ORDER.indexOf(zhTag(b));
+  return (ra<0?99:ra)-(rb<0?99:rb) || a.localeCompare(b,"zh");});
+
 function renderAll(){
   const active=document.querySelector(".chip.active")?.dataset.c||"all";
   const chips=document.getElementById("chips");
   const total=RAW.length;
   chips.innerHTML=[`<span class="chip active" data-c="all"><b>${T().all}</b> ${total}</span>`].concat(
-    keys.map(k=>`<span class="chip" data-c="${k}"><b>${tagOf(k)}</b> ${CATS[k].length}</span>`)
+    sortedKeys.map(k=>`<span class="chip" data-c="${k}"><b>${tagOf(k)}</b> ${CATS[k].length}</span>`)
   ).join("");
   document.querySelectorAll(".chip").forEach(ch=>ch.addEventListener("click",()=>{
     document.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));
