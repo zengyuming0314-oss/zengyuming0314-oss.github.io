@@ -9,7 +9,7 @@
   :root{--bg:#0d0e11;--card:#15171c;--line:#24272e;--text:#eceef2;--muted:#9aa0ac;--accent:#e25555;--accent2:#f0a35e}
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Segoe UI",Roboto,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Segoe UI",Roboto,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
   .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
   .lang-btn{position:fixed;top:14px;right:18px;z-index:90;border:1px solid var(--line);background:rgba(21,23,28,.85);backdrop-filter:blur(8px);color:var(--text);border-radius:999px;padding:5px 14px;font-size:12px;cursor:pointer}
   nav{position:sticky;top:0;z-index:80;background:rgba(13,14,17,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
@@ -19,26 +19,37 @@
   .nav-item{border:none;background:none;color:var(--muted);padding:7px 12px;font-size:13.5px;cursor:pointer;white-space:nowrap;border-radius:8px}
   .nav-item:hover{color:var(--text)}
   .nav-item .no{color:var(--accent);font-size:11px;margin-right:3px;font-family:ui-monospace,monospace}
-  section{padding:52px 0 8px;scroll-margin-top:58px}
-  .h2{font-size:19px;font-weight:800;letter-spacing:2px;margin-bottom:16px}
+  section{padding:50px 0 6px;scroll-margin-top:56px}
+  .h2{font-size:18px;font-weight:800;letter-spacing:2px;margin-bottom:14px}
   .h2 small{color:var(--accent);font-size:12px;margin-right:6px}
-  /* 01 关于 */
-  .about{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
-  .about img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px solid var(--line);flex-shrink:0}
-  .about .info{flex:1;min-width:240px}
-  .about h1{font-size:26px;letter-spacing:2px}
-  .about .role{color:var(--accent2);font-weight:600;margin:2px 0 6px;font-size:15px}
-  .about .meta{color:var(--muted);font-size:13px}
-  .about .meta span{margin-right:14px;white-space:nowrap}
-  .chips2{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
-  .chips2 span{border:1px solid var(--line);border-radius:999px;padding:3px 12px;font-size:11.5px;color:var(--muted)}
-  /* 02 经历 */
-  .job{display:flex;gap:16px;align-items:baseline;padding:10px 0;border-bottom:1px dashed var(--line)}
-  .job:last-child{border-bottom:none}
-  .job .t{font-family:ui-monospace,monospace;font-size:12.5px;color:var(--accent2);min-width:150px}
-  .job .o{font-weight:600;font-size:14.5px}
-  .job .r{color:var(--muted);font-size:13px;margin-left:10px}
-  /* 03 作品 */
+  .about{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+  .about img{width:92px;height:92px;border-radius:50%;object-fit:cover;border:2px solid var(--line);flex-shrink:0}
+  .about .info{flex:1;min-width:230px}
+  .about h1{font-size:24px;letter-spacing:2px}
+  .about .role{color:var(--accent2);font-weight:600;margin:1px 0 4px;font-size:15px}
+  .about .meta{color:var(--muted);font-size:12.5px}
+  .about .meta span{margin-right:12px;white-space:nowrap}
+  .tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+  .tags span{border:1px solid var(--line);border-radius:999px;padding:3px 12px;font-size:11.5px;color:var(--muted)}
+  .more{background:none;border:none;color:var(--accent2);font-size:13px;cursor:pointer;padding:10px 0 0;display:inline-flex;align-items:center;gap:5px}
+  .more:hover{opacity:.85}
+  .more .arr{transition:transform .2s}
+  .open>.more .arr{transform:rotate(90deg)}
+  .detail{display:none;padding-top:10px}
+  .open .detail{display:block}
+  .detail p{color:#c6c9d0;font-size:13.5px;margin-bottom:8px}
+  .job-card{border:1px solid var(--line);border-radius:12px;background:var(--card);margin-bottom:10px;overflow:hidden}
+  .job-head{display:flex;gap:14px;align-items:baseline;padding:12px 16px;cursor:pointer;flex-wrap:wrap}
+  .job-head:hover{background:var(--card2,#1b1e25)}
+  .job-head .t{font-family:ui-monospace,monospace;font-size:12px;color:var(--accent2);min-width:118px}
+  .job-head .o{font-weight:600;font-size:14px}
+  .job-head .r{color:var(--muted);font-size:12.5px;margin-left:6px}
+  .job-head .arr{margin-left:auto;color:var(--muted);transition:transform .2s;font-size:12px}
+  .job-card.open .job-head .arr{transform:rotate(90deg)}
+  .job-body{display:none;padding:2px 16px 14px}
+  .job-card.open .job-body{display:block}
+  .job-body ul{color:#c6c9d0;font-size:13.5px;padding-left:18px}
+  .job-body li{margin-bottom:3px}
   .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:4px}
   .chip{border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;padding:5px 14px;font-size:13px;cursor:pointer}
   .chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -52,20 +63,19 @@
   .play-ico{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;width:50px;height:50px;border-radius:50%;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;color:#fff;font-size:17px;opacity:0;transition:opacity .2s}
   .card:hover .play-ico{opacity:1;background:var(--accent)}
   .title{position:absolute;left:12px;right:12px;bottom:9px;z-index:2;color:#fff;font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .img-sub{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
+  .img-sub{margin-top:14px;border-top:1px solid var(--line);padding-top:14px}
   .img-toggle{background:none;border:1px dashed var(--line);color:var(--muted);border-radius:10px;padding:9px 18px;font-size:13px;cursor:pointer}
   .img-toggle:hover{color:var(--text);border-color:var(--accent2)}
   .img-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:14px}
   .img-card{border-radius:10px;overflow:hidden;border:1px solid var(--line);cursor:pointer;background:var(--card)}
   .img-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
   .img-cap{padding:6px 10px;font-size:11.5px;color:var(--muted)}
-  /* 04 联系 */
   .contact{display:flex;gap:14px;flex-wrap:wrap;padding-bottom:40px}
-  .c-item{border:1px solid var(--line);border-radius:12px;padding:14px 20px;background:var(--card);min-width:200px}
+  .c-item{border:1px solid var(--line);border-radius:12px;padding:13px 20px;background:var(--card);min-width:190px}
   .c-item .k{font-size:12px;color:var(--muted)}
-  .c-item .v{font-size:15px;font-weight:600;margin-top:3px}
+  .c-item .v{font-size:15px;font-weight:600;margin-top:2px}
   .c-item .v a{color:var(--accent2);text-decoration:none}
-  footer{border-top:1px solid var(--line);padding:20px 0 34px;text-align:center;color:var(--muted);font-size:12px}
+  footer{border-top:1px solid var(--line);padding:18px 0 32px;text-align:center;color:var(--muted);font-size:12px}
   .empty{padding:50px 20px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}
   .lb{position:fixed;inset:0;background:rgba(5,6,8,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:22px}
   .lb.open{display:flex}
@@ -77,7 +87,7 @@
   .lb-close{position:fixed;top:14px;right:22px;font-size:30px;color:#fff;background:none;border:none;cursor:pointer;z-index:101}
   .lb-prev,.lb-next{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);color:#fff;width:44px;height:44px;border-radius:50%;font-size:17px;cursor:pointer;z-index:101}
   .lb-prev{left:12px}.lb-next{right:12px}
-  @media(max-width:640px){.grid{grid-template-columns:1fr 1fr;gap:10px}.job .t{min-width:110px}}
+  @media(max-width:640px){.grid{grid-template-columns:1fr 1fr;gap:10px}.job-head .t{min-width:100px}}
 </style>
 </head>
 <body>
@@ -100,7 +110,8 @@
         <h1 data-k="name">曾钰茗</h1>
         <div class="role" data-k="objective"></div>
         <div class="meta" data-k="meta"></div>
-        <div class="chips2" data-k="skills"></div>
+        <div class="tags" data-k="skills"></div>
+        <div class="more-wrap" id="aboutMore"></div>
       </div>
     </div>
   </section>
@@ -135,16 +146,32 @@
 <script src="works.js"></script>
 <script>
 const D={
-zh:{name:"曾钰茗",objective:"短视频拍摄剪辑 · 内容运营",meta:"📍广西桂林 · 🎂2002 · 🎓北海职院·影视传媒 · 📞18969806453 · ✉️2556631157@qq.com",
-  skills:["拍剪运营3年+","文旅/宣传/短剧/电商","AI辅助创作","单月8条爆款","PR · AE · PS · 达芬奇 · 剪映"],
-  careerT:"工作经历",
-  jobs:[["2023.08 — 今","桂林七少汽车销售","拍摄剪辑"],["2023.04 — 2023.08","广西来也文化传媒","拍摄剪辑运营"],["2022.08 — 2023.01","广州星拓传媒","拍摄剪辑"],["2022.01 — 2022.08","广州再酷一点传媒","摄影剪辑"]],
+zh:{name:"曾钰茗",objective:"短视频拍摄剪辑 · 内容运营",
+  meta:"📍广西桂林 · 🎂2002 · 🎓北海职院·影视传媒",
+  skills:["拍剪运营3年+","文旅/宣传/短剧/电商/汽车","AI辅助创作","单月8条爆款"],
+  moreBtn:"关于我 ▸",
+  aboutText:["拥有 3 年以上短视频拍摄、剪辑与账号运营经验，覆盖电商信息流、达人短剧、文旅及汽车销售等场景。能独立完成选题脚本拆解、分镜设计、现场拍摄、后期包装与账号内容维护。","善于运用 AI 视频生成与智能创作工具辅助内容生产，具备爆款分析与复盘意识。熟练使用 Premiere Pro、After Effects、Photoshop、DaVinci Resolve、Final Cut Pro X、剪映。","工作认真主动，执行力强，关注内容趋势与用户反馈，能在快节奏项目中持续复盘优化。"],
+  careerT:"工作经历 · 点开看详情",
+  jobs:[
+    {t:"2023.08 — 至今",o:"桂林七少汽车销售服务有限公司",r:"拍摄剪辑",d:["负责企业短视频账号的日常内容运营与维护，围绕业务需求策划、拍摄并发布内容","独立完成短视频创作与后期制作：分镜梳理、镜头语言把控、剪辑及基础包装","使用相机、稳定器和灯光设备完成拍摄执行，保障内容产出效率与画面质量"]},
+    {t:"2023.04 — 2023.08",o:"广西来也文化传媒",r:"拍摄剪辑运营",d:["参与公司账号运营策划，分析爆款内容与同行案例，协助提炼选题方向和文案表达","负责项目拍摄、剪辑及宣发运营执行；服务账号「桂林包猪婆」「云游也是游」「来也文化」"]},
+    {t:"2022.08 — 2023.01",o:"广州星拓传媒",r:"拍摄剪辑",d:["负责抖音短剧达人账号的拍摄与剪辑，参与剧本分镜设计并把控镜头语言","围绕音乐、色彩与节奏进行素材搜集和后期包装，提升短剧内容的叙事与观看体验"]},
+    {t:"2022.01 — 2022.08",o:"广州再酷一点传媒",r:"摄影剪辑",d:["负责首饰电商信息流视频拍摄与剪辑，完成产品上身展示等内容制作；服务账号「卡铂雅」","持续分析爆款产品与同类视频表现并迭代内容，单月产出 8 条爆款视频"]}
+  ],
   worksT:"作品",all:"全部",worksN:"个",imgBtn:"📊 运营数据图片",imgNone:"暂无",none:"暂无",contactT:"联系方式",
   contact:[["📱","电话","18969806453"],["📧","邮箱","2556631157@qq.com"],["📍","所在地","广西桂林"]],btn:"EN",about:"简介",career:"经历",works:"作品",contact:"联系"},
-en:{name:"Zeng Yuming",objective:"Short-Video Shooting & Editing · Content Ops",meta:"📍Guilin, Guangxi · 🎂2002 · 🎓Beihai Voc. Film & Media · 📞18969806453 · ✉️2556631157@qq.com",
-  skills:["3+ yrs shoot/edit/ops","Travel/Promo/Drama/E-com","AI-assisted creation","8 viral videos / month","PR · AE · PS · Resolve · FCPX · JY"],
-  careerT:"Experience",
-  jobs:[["2023.08 — Now","Guilin Qishao Auto Sales","Camera & Editing"],["2023.04 — 2023.08","Laiye Culture Media","Shoot / Edit / Ops"],["2022.08 — 2023.01","Guangzhou Xintuo Media","Camera & Editing"],["2022.01 — 2022.08","Guangzhou Zaiku Yidian","Photo & Editing"]],
+en:{name:"Zeng Yuming",objective:"Short-Video Shooting & Editing · Content Ops",
+  meta:"📍Guilin, Guangxi · 🎂2002 · 🎓Beihai Voc. · Film & Media",
+  skills:["3+ yrs shoot/edit/ops","Travel/Promo/Drama/E-com/Auto","AI-assisted","8 viral vids / mo"],
+  moreBtn:"More about me ▸",
+  aboutText:["3+ years of short-video shooting, editing and account operations across e-commerce feeds, mini-dramas, travel and auto sales. Handles scripting, storyboarding, on-site shooting, post-production and account maintenance end-to-end.","Uses AI video generation tools to accelerate production and analyzes viral content rigorously. Proficient in Premiere Pro, After Effects, Photoshop, DaVinci Resolve, Final Cut Pro X and JianYing.","Proactive and detail-oriented; iterates quickly based on trends and audience feedback."],
+  careerT:"Experience · tap to expand",
+  jobs:[
+    {t:"2023.08 — Now",o:"Guilin Qishao Auto Sales",r:"Camera & Editing",d:["Daily short-video content ops for the company accounts: planning, shooting, publishing","Full post pipeline — storyboards, shot language, editing and packaging","Shoots with camera, gimbal and lighting rigs for consistent quality and speed"]},
+    {t:"2023.04 — 2023.08",o:"Laiye Culture Media",r:"Shoot / Edit / Ops",d:["Account strategy: studied viral & competitor content to sharpen topics and copy","Executed shooting, editing and launch ops for accounts incl. Guilin Baozhupo, Yunyou Yeshi You, Laiye Culture"]},
+    {t:"2022.08 — 2023.01",o:"Guangzhou Xintuo Media",r:"Camera & Editing",d:["Shot and edited Douyin mini-drama creator accounts; co-designed storyboards and shot language","Curated footage and post-packaging around music, color and rhythm"]},
+    {t:"2022.01 — 2022.08",o:"Guangzhou Zaiku Yidian",r:"Photo & Editing",d:["Shot and edited e-commerce feed videos for jewelry (product showcase) for account Cabuya","Iterated against viral benchmarks — 8 viral videos in a single month"]}
+  ],
   worksT:"Works",all:"All",worksN:"",imgBtn:"📊 Analytics (images)",imgNone:"None yet",none:"None yet",contactT:"Contact",
   contact:[["📱","Phone","18969806453"],["📧","Email","2556631157@qq.com"],["📍","Location","Guilin, Guangxi"]],btn:"中",about:"About",career:"Career",works:"Works",contact:"Contact"}
 };
@@ -161,22 +188,28 @@ const CATS={};VIDS.forEach(w=>{(CATS[w.cat]=CATS[w.cat]||[]).push(w);});
 const ORDER=["纪录片","短片","人物IP","文旅","宣传片","AIGC","访谈"];
 const sortedKeys=Object.keys(CATS).sort((a,b)=>{const ra=ORDER.indexOf(zhTag(a)),rb=ORDER.indexOf(zhTag(b));return(ra<0?99:ra)-(rb<0?99:rb)||a.localeCompare(b,"zh");});
 
-/* 语言切换 */
 function renderStatic(){
   const d=T();
   document.querySelectorAll("[data-k]").forEach(el=>{const k=el.dataset.k;if(d[k]!==undefined)el.textContent=d[k];});
-  if(typeof d.skills==="string")document.querySelector("[data-k=skills]").innerHTML=d.skills.split(",").map(s=>`<span>${s}</span>`).join("");
-  document.getElementById("jobs").innerHTML=d.jobs.map(j=>`<div class="job"><div class="t">${j[0]}</div><div class="o">${j[1]}</div><div class="r">${j[2]}</div></div>`).join("");
+  document.querySelector("[data-k=skills]").innerHTML=d.skills.map(s=>`<span>${s}</span>`).join("");
+  /* 关于-展开 */
+  const w=document.getElementById("aboutMore");
+  w.innerHTML=`<div class="detail"><p>${d.aboutText.join("</p><p>")}</p></div><button class="more" onclick="this.parentElement.classList.toggle('open')"><span class="arr">▸</span><span>${d.moreBtn}</span></button>`;
+  /* 经历-可点开 */
+  document.getElementById("jobs").innerHTML=d.jobs.map(j=>`<div class="job-card">
+    <div class="job-head" onclick="this.parentElement.classList.toggle('open')">
+      <div class="t">${j.t}</div><div class="o">${j.o}</div><div class="r">${j.r}</div><span class="arr">▸</span>
+    </div>
+    <div class="job-body"><ul>${j.d.map(x=>`<li>${x}</li>`).join("")}</ul></div>
+  </div>`).join("");
   document.getElementById("contact").innerHTML=d.contact.map(c=>`<div class="c-item"><div class="k">${c[1]}</div><div class="v">${/@/.test(c[2])?`<a href="mailto:${c[2]}">${c[2]}</a>`:c[2]}</div></div>`).join("");
   document.getElementById("langBtn").textContent=d.btn;
   document.getElementById("imgBtn").textContent=d.imgBtn;
   renderChips();renderGrid();renderImgBtn();
 }
-/* 作品 */
 let activeCat="all",imgOn=false;
 function renderChips(){
-  const d=T();
-  const el=document.getElementById("chips");
+  const d=T();const el=document.getElementById("chips");
   el.innerHTML=[`<span class="chip active" data-c="all">${d.all} ${VIDS.length}</span>`].concat(sortedKeys.map(k=>`<span class="chip" data-c="${k}">${tagOf(k)} ${CATS[k].length}</span>`)).join("");
   el.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{el.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));c.classList.add("active");activeCat=c.dataset.c;renderGrid();}));
 }
@@ -188,17 +221,14 @@ function renderGrid(){
   g.querySelectorAll(".card").forEach(cd=>cd.addEventListener("click",()=>openLb(+cd.dataset.i,"v")));
 }
 function renderImgBtn(){
-  const b=document.getElementById("imgBtn");
-  b.textContent=T().imgBtn+(imgOn?" ▲":" ▶");
+  const b=document.getElementById("imgBtn");b.textContent=T().imgBtn+(imgOn?" ▲":" ▶");
   b.onclick=()=>{imgOn=!imgOn;renderImgBtn();const s=document.getElementById("imgSub");
     if(!imgOn){s.innerHTML="";return;}
     s.innerHTML=IMGS.length?`<div class="img-grid">${IMGS.map((w,i)=>`<div class="img-card" data-i="${i}"><img src="${w.file}" loading="lazy"><div class="img-cap">${w.title||""}</div></div>`).join("")}</div>`:`<div class="empty">${T().imgNone}</div>`;
     s.querySelectorAll(".img-card").forEach(cd=>cd.addEventListener("click",()=>openLb(+cd.dataset.i,"i")));};
 }
-/* 灯箱 */
 const lb=document.getElementById("lb"),lbM=document.getElementById("lbMedia"),lbT=document.getElementById("lbTitle");
-let mode="v",cur=-1;
-const listOf=()=>mode==="v"?VIDS:IMGS;
+let mode="v",cur=-1;const listOf=()=>mode==="v"?VIDS:IMGS;
 function openLb(i,m){mode=m;const v=listOf();if(!v[i])return;cur=i;const w=v[i];
   lbM.innerHTML=isVid(w.file)?`<video src="${w.file}" controls autoplay playsinline></video>`:`<img src="${w.file}">`;
   lbT.textContent=w.title||"";lb.classList.add("open");}
