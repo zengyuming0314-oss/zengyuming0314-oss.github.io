@@ -22,6 +22,9 @@ def clean(name):
     name = re.sub(r"^[\s\-_\.]+|[\s\-_\.]+$", "", name)
     return name
 
+def clean_cat(name):
+    return name.replace("**", "").strip()
+
 items = []
 if os.path.isdir(WORKS):
     for entry in sorted(os.listdir(WORKS)):
@@ -29,12 +32,12 @@ if os.path.isdir(WORKS):
         if os.path.isfile(p):
             ext = os.path.splitext(entry)[1].lower()
             if ext in VIDEO_EXT | IMG_EXT:
-                items.append({"file": "works/" + entry, "title": clean(entry), "cat": "未分类"})
+                items.append({"file": "works/" + entry, "title": clean(entry), "cat": clean_cat("未分类")})
         elif os.path.isdir(p):
             for f in sorted(os.listdir(p)):
                 ext = os.path.splitext(f)[1].lower()
                 if ext in VIDEO_EXT | IMG_EXT:
-                    items.append({"file": f"works/{entry}/{f}", "title": clean(f), "cat": entry})
+                    items.append({"file": f"works/{entry}/{f}", "title": clean(f), "cat": clean_cat(entry)})
 
 # 追加远程视频（remotes.json：大文件放 GitHub Releases，这里写完整 URL）
 remotes_path = os.path.join(ROOT, "remotes.json")
