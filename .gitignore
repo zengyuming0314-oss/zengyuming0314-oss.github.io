@@ -2,5 +2,12 @@
 **/.DS_Store
 视频原片/
 .upload/
-.push.log
 .upload.log
+.push.log
+.push2.log
+.push3.log
+.fixed/
+.fix_*.json
+.fix_small.json
+.fixup.log
+.fixup.out
