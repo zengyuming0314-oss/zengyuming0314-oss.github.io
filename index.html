@@ -278,29 +278,31 @@ function renderWall(){
   const w=document.getElementById("wall");
   if(!list.length){w.innerHTML=`<div class="empty rv">${d.all==="全部"?"暂无作品":"No works yet"}</div>`;watchReveal();return;}
   w.innerHTML=list.map((v,i)=>`<div class="card" style="opacity:0;transform:translateY(22px) scale(.98);transition:opacity .55s var(--ease),transform .55s var(--ease)" data-i="${i}"><div class="th">${v.poster?`<img src="${v.poster}" loading="lazy">`:(isVid(v.file)?`<video muted preload="metadata" src="${v.file}"></video>`:`<img src="${v.file}" loading="lazy">`)}</div><span class="ct">${tagOf(v.cat)}</span><span class="pv">▶</span><span class="tt">${v.title||""}</span></div>`).join("");
-  w.querySelectorAll(".card").forEach(cd=>cd.addEventListener("click",()=>openLb(+cd.dataset.i,"v")));
+  w.querySelectorAll(".card").forEach(cd=>cd.addEventListener("click",()=>openLb(+cd.dataset.i)));
   w.querySelectorAll(".card").forEach(cd=>{cd.addEventListener("mousemove",e=>{const r=cd.getBoundingClientRect();cd.style.setProperty("--ox",((e.clientX-r.left)/r.width*100)+"%");cd.style.setProperty("--oy",((e.clientY-r.top)/r.height*100)+"%");});});
+  curArr=list;
   [...w.children].forEach((el,j)=>setTimeout(()=>{el.style.opacity="1";el.style.transform="none";},j*55));
 }
 const imgBtn=document.getElementById("imgBtn"),imgs=document.getElementById("imgs");
 imgBtn.onclick=()=>{imgs.classList.toggle("show");imgBtn.textContent=T().imgBtn+(imgs.classList.contains("show")?" ▲":" ▶");if(imgs.classList.contains("show"))renderImgs();};
 function renderImgs(){
   imgs.innerHTML=IMGS.length?IMGS.map((v,i)=>`<div class="imgc rv" data-i="${i}"><img src="${v.file}" loading="lazy"><div class="cap">${v.title||""}</div></div>`).join(""):`<div class="empty rv">—</div>`;
-  imgs.querySelectorAll(".imgc").forEach(cd=>cd.addEventListener("click",()=>openLb(+cd.dataset.i,"i")));
+  imgs.querySelectorAll(".imgc").forEach(cd=>cd.addEventListener("click",()=>openLb(+cd.dataset.i)));
+  curArr=IMGS;
   watchReveal();
 }
-/* 灯箱 */
+/* 灯箱（对应当前可见列表，避免分类筛选后错位）*/
 const lb=document.getElementById("lb"),lbM=document.getElementById("lbM"),lbT=document.getElementById("lbT");
-let mode="v",cur=-1;const listOf=()=>mode==="v"?VIDS:IMGS;
-function openLb(i,m){mode=m;const v=listOf();if(!v[i])return;cur=i;const x=v[i];
+let curArr=VIDS,cur=-1;
+function openLb(i){const v=curArr;if(!v[i])return;cur=i;const x=v[i];
   lbM.innerHTML=isVid(x.file)?`<video src="${x.file}" controls autoplay playsinline></video>`:`<img src="${x.file}">`;
   lbT.textContent=x.title||"";lb.classList.add("open");
   const el=lbM.firstElementChild;requestAnimationFrame(()=>requestAnimationFrame(()=>el&&el.classList.add("on")));}
 function closeLb(){lb.classList.remove("open");lbM.innerHTML="";}
 document.getElementById("lbClose").onclick=closeLb;
 lb.addEventListener("click",e=>{if(e.target===lb)closeLb();});
-document.getElementById("lbPrev").onclick=e=>{e.stopPropagation();const v=listOf();openLb((cur-1+v.length)%v.length,mode);};
-document.getElementById("lbNext").onclick=e=>{e.stopPropagation();const v=listOf();openLb((cur+1)%v.length,mode);};
+document.getElementById("lbPrev").onclick=e=>{e.stopPropagation();const v=curArr;openLb((cur-1+v.length)%v.length);};
+document.getElementById("lbNext").onclick=e=>{e.stopPropagation();const v=curArr;openLb((cur+1)%v.length);};
 document.addEventListener("keydown",e=>{if(!lb.classList.contains("open"))return;if(e.key==="Escape")closeLb();if(e.key==="ArrowLeft")document.getElementById("lbPrev").click();if(e.key==="ArrowRight")document.getElementById("lbNext").click();});
 /* 导航滚动跟随 + 当前位置 */
 const sections=[...document.querySelectorAll("section")];
