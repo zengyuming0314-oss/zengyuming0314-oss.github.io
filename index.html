@@ -14,53 +14,61 @@
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Segoe UI",Roboto,sans-serif;line-height:1.6}
   .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-  /* 语言切换 */
   .lang-btn{position:fixed;top:18px;right:22px;z-index:50;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:999px;padding:6px 16px;font-size:13px;cursor:pointer;transition:all .15s;letter-spacing:1px}
   .lang-btn:hover{border-color:var(--accent);color:var(--accent)}
-  /* Hero */
-  header{padding:110px 0 40px;text-align:center;position:relative;overflow:hidden}
+  header{padding:100px 0 20px;text-align:center;position:relative;overflow:hidden}
   header::before{content:"";position:absolute;inset:0;background:radial-gradient(640px 320px at 50% -60px,rgba(226,85,85,.14),transparent);pointer-events:none}
-  .avatar{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--line);margin:0 auto 20px;display:block;background:var(--card2)}
-  h1{font-size:clamp(28px,4.6vw,42px);letter-spacing:2px;font-weight:800}
-  .tagline{color:var(--muted);margin-top:12px;font-size:clamp(14px,2vw,16px);letter-spacing:1px}
-  .chips{margin-top:22px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-  .chip{border:1px solid var(--line);border-radius:999px;padding:5px 15px;font-size:12.5px;color:var(--muted);background:var(--card)}
-  /* Works */
-  main{padding:16px 0 80px}
-  .sec-head{display:flex;align-items:baseline;gap:12px;margin:36px 0 4px;flex-wrap:wrap}
-  .sec-title{font-size:20px;font-weight:700;letter-spacing:1px}
-  .sec-count{color:var(--muted);font-size:13px}
-  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 24px}
-  .tab{border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;padding:7px 18px;font-size:13px;cursor:pointer;transition:all .15s}
-  .tab:hover{color:var(--text)}
-  .tab.active{background:var(--accent);border-color:var(--accent);color:#fff}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;transition:transform .18s ease,border-color .18s ease}
+  .avatar{width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid var(--line);margin:0 auto 18px;display:block;background:var(--card2)}
+  h1{font-size:clamp(26px,4.2vw,38px);letter-spacing:2px;font-weight:800}
+  .tagline{color:var(--muted);margin-top:10px;font-size:clamp(13px,1.9vw,15.5px);letter-spacing:1px}
+  main{padding:10px 0 70px}
+  /* 面包屑/返回 */
+  .crumb{display:flex;align-items:center;gap:10px;margin:26px 0 18px;min-height:30px}
+  .back-btn{border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:999px;padding:5px 16px;font-size:13px;cursor:pointer;display:none}
+  .back-btn:hover{border-color:var(--accent)}
+  .crumb-title{font-size:20px;font-weight:700;letter-spacing:1px}
+  .crumb-sub{color:var(--muted);font-size:13px}
+  /* 大类卡片 */
+  .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;margin-top:8px}
+  .cat-card{border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;background:var(--card);transition:transform .18s ease,border-color .18s ease;position:relative;aspect-ratio:4/3;display:flex;flex-direction:column}
+  .cat-card:hover{transform:translateY(-4px);border-color:var(--accent)}
+  .cat-cover{flex:1;min-height:0;position:relative;background:linear-gradient(135deg,#1c1f26,#12141a)}
+  .cat-cover video,.cat-cover img{width:100%;height:100%;object-fit:cover;opacity:.55}
+  .cat-cover .ct-emoji{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:44px;opacity:.85;text-shadow:0 4px 24px rgba(0,0,0,.5)}
+  .cat-label{padding:14px 16px;border-top:1px solid var(--line)}
+  .cat-label .zh{font-size:17px;font-weight:700;letter-spacing:1px}
+  .cat-label .en{color:var(--muted);font-size:12.5px;margin-top:2px}
+  .cat-label .n{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);border-radius:999px;font-size:11.5px;padding:3px 10px;color:#fff}
+  /* 小类 chips */
+  .subtabs{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 20px}
+  .subtab{border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;padding:6px 16px;font-size:12.5px;cursor:pointer;transition:all .15s}
+  .subtab.active,.subtab:hover{color:var(--text);border-color:var(--accent2)}
+  /* 作品网格 */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;transition:transform .18s ease,border-color .18s ease;position:relative}
   .card:hover{transform:translateY(-4px);border-color:var(--accent)}
   .thumb{aspect-ratio:16/9;background:#000 center/cover;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
   .thumb video{width:100%;height:100%;object-fit:cover}
-  .thumb .play{position:absolute;width:54px;height:54px;border-radius:50%;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;border:1px solid rgba(255,255,255,.25);transition:all .15s;pointer-events:none}
+  .thumb .play{position:absolute;width:52px;height:52px;border-radius:50%;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;color:#fff;font-size:17px;border:1px solid rgba(255,255,255,.25);pointer-events:none;transition:all .15s}
   .card:hover .play{transform:scale(1.1);background:var(--accent)}
-  .cat-badge{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);color:#fff;font-size:11px;padding:3px 10px;border-radius:999px;letter-spacing:.5px}
-  .meta{padding:13px 16px 15px}
+  .sub-badge{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);color:#fff;font-size:11px;padding:3px 10px;border-radius:999px;display:none}
+  .meta{padding:12px 16px 14px}
   .meta h3{font-size:14.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .meta p{color:var(--muted);font-size:12px;margin-top:3px}
-  .empty{padding:56px 20px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px;grid-column:1/-1}
-  .empty code{background:var(--card2);padding:2px 8px;border-radius:6px;color:var(--text);font-size:12.5px}
-  /* Lightbox */
-  .lb{position:fixed;inset:0;background:rgba(5,6,8,.93);z-index:99;display:none;align-items:center;justify-content:center;padding:30px}
+  .empty{padding:56px 20px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}
+  /* 灯箱 */
+  .lb{position:fixed;inset:0;background:rgba(5,6,8,.93);z-index:99;display:none;align-items:center;justify-content:center;padding:26px}
   .lb.open{display:flex}
-  .lb-box{max-width:min(1000px,92vw);width:100%;max-height:86vh;display:flex;flex-direction:column;background:#000;border:1px solid var(--line);border-radius:16px;overflow:hidden}
-  .lb-media{flex:1;min-height:0;background:#000;display:flex;align-items:center;justify-content:center}
-  .lb-media video,.lb-media img{max-width:100%;max-height:calc(86vh - 110px);display:block}
+  .lb-box{max-width:min(1000px,92vw);width:100%;max-height:88vh;display:flex;flex-direction:column;background:#000;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .lb-media{flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
+  .lb-media video,.lb-media img{max-width:100%;max-height:calc(88vh - 108px);display:block}
   .lb-info{padding:12px 18px;display:flex;align-items:center;gap:12px;background:var(--card)}
   .lb-info h3{font-size:14.5px;flex:1}
-  .lb-info .cat{font-size:11.5px;color:var(--muted);border:1px solid var(--line);padding:2px 10px;border-radius:999px}
+  .lb-info .c{font-size:11.5px;color:var(--muted);border:1px solid var(--line);padding:2px 10px;border-radius:999px}
   .lb-close{position:fixed;top:16px;right:24px;font-size:32px;color:#fff;cursor:pointer;background:none;border:none;z-index:100;line-height:1}
   .lb-prev,.lb-next{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;width:44px;height:44px;border-radius:50%;font-size:17px;cursor:pointer;z-index:100}
   .lb-prev{left:16px}.lb-next{right:16px}
-  footer{border-top:1px solid var(--line);padding:30px 0 44px;text-align:center;color:var(--muted);font-size:13px}
-  @media(max-width:640px){header{padding:80px 0 30px}.lb-prev{left:6px}.lb-next{right:6px}.lang-btn{top:12px;right:12px}}
+  footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;color:var(--muted);font-size:13px}
+  @media(max-width:640px){header{padding:76px 0 12px}.lang-btn{top:12px;right:12px}}
 </style>
 </head>
 <body>
@@ -70,141 +78,145 @@
 <header>
   <div class="wrap">
     <img class="avatar" id="avatar" alt="avatar" onerror="this.style.display='none'">
-    <h1 id="siteName">曾钰茗作品集</h1>
+    <h1>曾钰茗作品集</h1>
     <p class="tagline" id="tagline"></p>
-    <div class="chips" id="chips"></div>
   </div>
 </header>
 
 <main class="wrap">
-  <div class="sec-head">
-    <span class="sec-title" id="secTitle">作品集</span>
-    <span class="sec-count" id="count"></span>
+  <div class="crumb">
+    <button class="back-btn" id="backBtn" onclick="showHome()">‹ <span data-i18n="back">返回</span></button>
+    <span class="crumb-title" id="crumbTitle"></span>
+    <span class="crumb-sub" id="crumbSub"></span>
   </div>
-  <div class="tabs" id="tabs"></div>
-  <div class="grid" id="grid"></div>
+  <div id="view"></div>
 </main>
 
-<footer>
-  <div class="wrap">© <span id="year"></span> 曾钰茗作品集</div>
-</footer>
+<footer>© <span id="year"></span> 曾钰茗作品集</footer>
 
-<div class="lb" id="lb" role="dialog" aria-modal="true">
+<div class="lb" id="lb">
   <button class="lb-close" id="lbClose">×</button>
   <button class="lb-prev" id="lbPrev">‹</button>
   <button class="lb-next" id="lbNext">›</button>
   <div class="lb-box">
     <div class="lb-media" id="lbMedia"></div>
-    <div class="lb-info"><h3 id="lbTitle"></h3><span class="cat" id="lbCat"></span></div>
+    <div class="lb-info"><h3 id="lbTitle"></h3><span class="c" id="lbCat"></span></div>
   </div>
 </div>
 
 <script src="works.js"></script>
 <script>
-/* ============ 双语文案 ============ */
+/* ===== 多语言 ===== */
 const I18N = {
-  zh: {
-    tagline: "摄影师 · 剪辑师 · AI 视觉创作者 · 短视频运营",
-    chips: ["📸 摄影", "✂️ 剪辑", "🤖 AI 视觉创作", "📱 短视频运营"],
-    secTitle: "作品集",
-    all: "全部",
-    uncat: "未分类",
-    count: n => n + " 件作品",
-    empty: `还没有作品 — 把视频放进 <code>works</code> 文件夹，双击 <code>build.command</code> 刷新`,
-    emptyCat: `这个分类还没有作品`,
-    btn: "EN"
-  },
-  en: {
-    tagline: "Photographer · Editor · AI Visual Creator · Short-Video Operator",
-    chips: ["📸 Photography", "✂️ Editing", "🤖 AI Visual Art", "📱 Short-Video Ops"],
-    secTitle: "Portfolio",
-    all: "All",
-    uncat: "Uncategorized",
-    count: n => n + " works",
-    empty: `No works yet — drop videos into the <code>works</code> folder, then double-click <code>build.command</code>`,
-    emptyCat: "No works in this category yet",
-    btn: "中"
-  }
+  zh: { tagline:"摄影师 · 剪辑师 · AI 视觉创作者 · 短视频运营", back:"返回", works:"作品", none:"暂无作品 — 视频放入 works 文件夹并运行 build.command", btn:"EN" },
+  en: { tagline:"Photographer · Editor · AI Visual Creator · Short-Video Operator", back:"Back", works:"works", none:"No works yet — drop videos into works/ and run build.command", btn:"中" }
 };
-/* ============ 状态 ============ */
-let lang = localStorage.getItem("pf_lang") || (navigator.language && navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en");
-const T = () => I18N[lang];
-const ALL = (window.WORKS || []).map(w => Object.assign({cat:"未分类"}, w));
-const isVid = f => /\.(mp4|mov|webm|m4v)$/i.test(f);
-let activeCat = "all", cur = -1;
+let lang = localStorage.getItem("pf_lang") || (navigator.language&&navigator.language.toLowerCase().startsWith("zh")?"zh":"en");
+const T=()=>I18N[lang];
+const RAW=(window.WORKS||[]).map(w=>Object.assign({cat:"未分类",sub:""},w));
+const isVid=f=>/\.(mp4|mov|webm|m4v)$/i.test(f);
 
-function catLabel(c){ return c === "未分类" ? T().uncat : c; }
-
-function renderStatic(){
-  document.getElementById('siteName').textContent = "曾钰茗作品集";
-  document.getElementById('tagline').textContent = T().tagline;
-  document.getElementById('chips').innerHTML = T().chips.map(c=>`<span class="chip">${c}</span>`).join('');
-  document.getElementById('secTitle').textContent = T().secTitle;
-  document.getElementById('langBtn').textContent = T().btn;
-  if (!ALL.length){ document.getElementById('count').textContent=""; } // 列表重绘时更新
+/* 分类名解析：中文**English** → {zh,en}；无 ** 时启发式拆分 */
+function splitName(s){
+  if(s.includes("**")){let p=s.split("**");return{zh:p[0].replace(/^[\d.\s\u00b7·\-]+/,"").trim(),en:p[1]||""}}
+  let m=s.match(/^(.*?)[\s·]?([A-Za-z][A-Za-z .\-‐&]*)$/);
+  if(m&&m[2].length>2)return{zh:m[1].replace(/^[\d.\s\u00b7·\-]+/,"").trim()||m[2],en:m[2]};
+  return{zh:s,en:""};
+}
+function catLabel(cat){
+  const d=splitName(cat);
+  if(lang==="en"&&d.en)return d.en;
+  return d.zh||cat;
 }
 
-function renderTabs(){
-  const cats = ["all", ...new Set(ALL.map(w=>w.cat))];
-  document.getElementById('tabs').innerHTML = cats.map(c=>
-    `<span class="tab${c===activeCat?' active':''}" data-cat="${c}">${c==="all"?T().all:catLabel(c)}</span>`).join('');
-}
+/* 聚合：大类 → {subs:[...], items:[...]} */
+const CATS={};
+RAW.forEach(w=>{ (CATS[w.cat]=CATS[w.cat]||{subs:new Set(),items:[]}); CATS[w.cat].subs.add(w.sub); CATS[w.cat].items.push(w); });
+Object.values(CATS).forEach(c=>c.subs=Array.from(c.subs).filter(Boolean));
+const order=["宣传类**Promotional**","文旅类**Culture & Tourism**","纪录片**Documentary**","访谈类**Interview**","短视频类1. **Short‑form Video**","个人ip类型**Personal IP Content**","AI创作持续更新中","ai创作持续更新中...","一些短视频运营数据 — **Short‑video Operation Data**"];
 
-function renderList(){
-  renderTabs();
-  const list = activeCat==="all" ? ALL : ALL.filter(w=>w.cat===activeCat);
-  const grid = document.getElementById('grid');
-  if (!list.length){
-    grid.innerHTML = `<div class="empty">${ALL.length?T().emptyCat:T().empty}</div>`;
-    document.getElementById('count').textContent = "";
-    return;
+let viewCat=null, cur=-1, listIdx=[];
+
+function coverEl(cat,item){
+  const local=cat.items.find(i=>!String(i.file).startsWith("http"));
+  if(local){return isVid(local.file)?`<video muted preload="metadata" src="${local.file}"></video>`:`<img src="${local.file}">`;}
+  return "";
+}
+function renderHome(){
+  viewCat=null; document.getElementById("backBtn").style.display="none";
+  document.getElementById("crumbTitle").textContent="";
+  document.getElementById("crumbSub").textContent="";
+  const keys=Object.keys(CATS).sort((a,b)=>{const ia=order.indexOf(a),ib=order.indexOf(b);return (ia<0?99:ia)-(ib<0?99:ib);});
+  document.getElementById("view").innerHTML=`<div class="cat-grid">${keys.map(k=>{const c=CATS[k];const d=splitName(k);
+    return `<div class="cat-card" data-cat="${k}">
+      <div class="cat-cover">${coverEl(c)}<span class="ct-emoji">🎬</span></div>
+      <span class="n">${c.items.length} ${T().works}</span>
+      <div class="cat-label"><div class="zh">${d.zh}</div>${d.en?`<div class="en">${d.en}</div>`:""}</div>
+    </div>`}).join("")}</div>`;
+  document.querySelectorAll(".cat-card").forEach(el=>el.addEventListener("click",()=>showCat(el.dataset.cat)));
+}
+function showCat(cat){
+  const c=CATS[cat]; if(!c)return;
+  viewCat=cat; document.getElementById("backBtn").style.display="";
+  const d=splitName(cat);
+  document.getElementById("crumbTitle").textContent=catLabel(cat);
+  document.getElementById("crumbSub").textContent=c.items.length+" "+T().works;
+  const v=document.getElementById("view");
+  let html="";
+  if(c.subs.length>1){
+    html+=`<div class="subtabs"><span class="subtab active" data-sub="">${catLabel(cat)}</span>${c.subs.map(s=>`<span class="subtab" data-sub="${s}">${s}</span>`).join("")}</div>`;
   }
-  grid.innerHTML = list.map((w,i)=>`
+  const items=c.items;
+  html+=`<div class="grid" id="grid">${items.map((w,i)=>`
     <div class="card" data-i="${i}">
-      <div class="thumb">
-        ${w.poster?`<img src="${w.poster}" alt="">`:(isVid(w.file)?`<video muted preload="metadata" src="${w.file}"></video>`:`<img src="${w.file}" alt="">`)}
-        ${isVid(w.file)?'<span class="play">▶</span>':''}
-        <span class="cat-badge">${catLabel(w.cat)}</span>
-      </div>
+      <div class="thumb">${w.poster?`<img src="${w.poster}">`:(isVid(w.file)?`<video muted preload="metadata" src="${w.file}"></video>`:`<img src="${w.file}">`)}
+      ${isVid(w.file)?'<span class="play">▶</span>':''}${w.sub?`<span class="sub-badge">${w.sub}</span>`:""}</div>
       <div class="meta"><h3>${w.title||""}</h3></div>
-    </div>`).join('');
-  document.getElementById('count').textContent = T().count(list.length);
-  grid.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>openLb(+c.dataset.i)));
+    </div>`).join("")}</div>`;
+  v.innerHTML=html;
+  if(!items.length)v.innerHTML=`<div class="empty">${T().none}</div>`;
+  v.querySelectorAll(".card").forEach(cd=>cd.addEventListener("click",()=>openLb(+cd.dataset.i)));
+  const tabs=v.querySelectorAll(".subtab");
+  if(tabs.length)tabs.forEach(t=>t.addEventListener("click",()=>{
+    tabs.forEach(x=>x.classList.remove("active")); t.classList.add("active");
+    const sub=t.dataset.sub;
+    const list=sub?items.filter(w=>w.sub===sub):items;
+    const g=v.querySelector("#grid"); if(!g)return;
+    g.innerHTML=list.map((w,i)=>`<div class="card" data-i="${i}"><div class="thumb">${w.poster?`<img src="${w.poster}">`:(isVid(w.file)?`<video muted preload="metadata" src="${w.file}"></video>`:`<img src="${w.file}">`)}${isVid(w.file)?'<span class="play">▶</span>':''}${w.sub?`<span class="sub-badge">${w.sub}</span>`:""}</div><div class="meta"><h3>${w.title||""}</h3></div></div>`).join("");
+    g.querySelectorAll(".card").forEach(cd=>cd.addEventListener("click",()=>openLb(+cd.dataset.i)));
+  }));
 }
-
-document.getElementById('tabs').addEventListener('click',e=>{
-  const t = e.target.closest('.tab'); if(!t) return;
-  activeCat = t.dataset.cat; renderList();
-});
-
-function toggleLang(){
-  lang = lang==="zh"?"en":"zh";
-  localStorage.setItem("pf_lang", lang);
-  renderStatic(); renderList();
-  if (document.getElementById('lb').classList.contains('open')){ /* 灯箱文案随语言 */ }
-}
+function showHome(){renderHome();}
 
 /* 灯箱 */
-const lb=document.getElementById('lb'), lbMedia=document.getElementById('lbMedia'),
-      lbTitle=document.getElementById('lbTitle'), lbCat=document.getElementById('lbCat');
-function visible(){return activeCat==="all"?ALL:ALL.filter(w=>w.cat===activeCat)}
+const lb=document.getElementById("lb"),lbMedia=document.getElementById("lbMedia"),
+      lbTitle=document.getElementById("lbTitle"),lbCat=document.getElementById("lbCat");
+function curList(){const c=CATS[viewCat];return c?c.items:[];}
 function openLb(i){
-  const v = visible(); if(!v[i]) return; cur = i;
-  const w = v[i];
-  lbMedia.innerHTML = isVid(w.file)?`<video src="${w.file}" controls autoplay playsinline></video>`:`<img src="${w.file}">`;
-  lbTitle.textContent = w.title||""; lbCat.textContent = catLabel(w.cat);
-  lb.classList.add('open');
+  const v=curList(); if(!v[i])return; cur=i; const w=v[i];
+  lbMedia.innerHTML=isVid(w.file)?`<video src="${w.file}" controls autoplay playsinline></video>`:`<img src="${w.file}">`;
+  lbTitle.textContent=w.title||""; lbCat.textContent=viewCat?catLabel(viewCat):"";
+  lb.classList.add("open");
 }
-document.getElementById('lbClose').onclick=()=>{lb.classList.remove('open');lbMedia.innerHTML='';};
-lb.addEventListener('click',e=>{if(e.target===lb){lb.classList.remove('open');lbMedia.innerHTML='';}});
-document.getElementById('lbPrev').onclick=e=>{e.stopPropagation();const v=visible();openLb((cur-1+v.length)%v.length)};
-document.getElementById('lbNext').onclick=e=>{e.stopPropagation();const v=visible();openLb((cur+1)%v.length)};
-document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;
-  if(e.key==='Escape')document.getElementById('lbClose').click();
-  if(e.key==='ArrowLeft')document.getElementById('lbPrev').click();
-  if(e.key==='ArrowRight')document.getElementById('lbNext').click();});
+document.getElementById("lbClose").onclick=()=>{lb.classList.remove("open");lbMedia.innerHTML="";};
+lb.addEventListener("click",e=>{if(e.target===lb){lb.classList.remove("open");lbMedia.innerHTML="";}});
+document.getElementById("lbPrev").onclick=e=>{e.stopPropagation();const v=curList();openLb((cur-1+v.length)%v.length);};
+document.getElementById("lbNext").onclick=e=>{e.stopPropagation();const v=curList();openLb((cur+1)%v.length);};
+document.addEventListener("keydown",e=>{if(!lb.classList.contains("open"))return;
+  if(e.key==="Escape")document.getElementById("lbClose").click();
+  if(e.key==="ArrowLeft")document.getElementById("lbPrev").click();
+  if(e.key==="ArrowRight")document.getElementById("lbNext").click();});
 
-renderStatic(); renderList();
+function toggleLang(){
+  lang=lang==="zh"?"en":"zh"; localStorage.setItem("pf_lang",lang);
+  document.getElementById("langBtn").textContent=T().btn;
+  document.getElementById("tagline").textContent=T().tagline;
+  viewCat?showCat(viewCat):renderHome();
+}
+document.getElementById("tagline").textContent=T().tagline;
+document.getElementById("langBtn").textContent=T().btn;
+document.getElementById("year").textContent=new Date().getFullYear();
+renderHome();
 </script>
 </body>
 </html>
