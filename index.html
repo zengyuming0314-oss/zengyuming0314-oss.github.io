@@ -214,14 +214,14 @@ let lang=localStorage.getItem("pf_lang")||(navigator.language&&navigator.languag
 const T=()=>D[lang];
 const RAW=(window.WORKS||[]).map(w=>Object.assign({cat:"未分类"},w));
 const isVid=f=>/\.(mp4|mov|webm|m4v)$/i.test(f);
-const RULES=[[/个人ip/i,"人物IP","Personal IP"],[/文旅/i,"文旅","Travel"],[/宣传|招商/i,"宣传片","Promo"],[/访谈/i,"访谈","Interview"],[/纪录片/i,"纪录片","Doc"],[/短视频|短片/i,"短片","Short"],[/AI创作|ai创作/i,"AIGC","AIGC"],[/运营数据/i,"运营数据","Data"]];
-function zhTag(c){const b=c.replace(/\*\*/g," ").replace(/^[\d.\s\u00b7·\-]+/,"").trim();for(const r of RULES){if(r[0].test(c)||r[0].test(b))return r[1];}return b;}
-function tagOf(c){const b=c.replace(/\*\*/g," ").replace(/^[\d.\s\u00b7·\-]+/,"").trim();for(const r of RULES){if(r[0].test(c)||r[0].test(b))return lang==="en"?r[2]:r[1];}return b;}
-const VIDS=RAW.filter(w=>!/运营数据|Analytics/i.test(w.cat));
-const IMGS=RAW.filter(w=>/运营数据|Analytics/i.test(w.cat));
+/* works.js 里分类已是短名（人物IP/文旅/宣传片/访谈/纪录片/短片/AIGC/运营数据）*/
+const EN_SHORT={"人物IP":"Personal IP","文旅":"Travel","宣传片":"Promo","访谈":"Interview","纪录片":"Documentary","短片":"Short Film","AIGC":"AIGC","运营数据":"Analytics"};
+const tagOf=k=>lang==="en"?(EN_SHORT[k]||k):k;
+const VIDS=RAW.filter(w=>w.cat!=="运营数据");
+const IMGS=RAW.filter(w=>w.cat==="运营数据");
 const CATS={};VIDS.forEach(w=>{(CATS[w.cat]=CATS[w.cat]||[]).push(w);});
 const ORDER=["纪录片","短片","人物IP","文旅","宣传片","AIGC","访谈"];
-const sKeys=Object.keys(CATS).sort((a,b)=>{const ra=ORDER.indexOf(zhTag(a)),rb=ORDER.indexOf(zhTag(b));return(ra<0?99:ra)-(rb<0?99:rb)||a.localeCompare(b,"zh");});
+const sKeys=Object.keys(CATS).sort((a,b)=>{const ra=ORDER.indexOf(a),rb=ORDER.indexOf(b);return(ra<0?99:ra)-(rb<0?99:rb)||a.localeCompare(b,"zh");});
 
 function renderStatic(){
   const d=T();
@@ -231,7 +231,7 @@ function renderStatic(){
   document.querySelector("[data-k=tags]").innerHTML=tags;
   const w=document.getElementById("aboutMore");
   w.innerHTML=`<div class="wrap2"><div class="detail"><p>${d.aboutText.join("</p><p>")}</p></div></div><button class="more-btn" style="margin-top:14px" onclick="this.parentElement.classList.toggle('open')">${d.aboutMore}</button>`;
-  document.getElementById("jobs").innerHTML=d.jobs.map(j=>`<div class="job"><div class="job-head" onclick="this.parentElement.parentElement.classList.toggle('open')"><div class="t">${j.t}</div><div class="o">${j.o}</div><div class="r">${j.r}</div><span class="arr">▸</span></div><div class="job-body"><ul>${j.d.map(x=>`<li>${x}</li>`).join("")}</ul></div></div>`).join("");
+  document.getElementById("jobs").innerHTML=d.jobs.map(j=>`<div class="job"><div class="job-head" onclick="this.closest('.job').classList.toggle('open')"><div class="t">${j.t}</div><div class="o">${j.o}</div><div class="r">${j.r}</div><span class="arr">▸</span></div><div class="job-body"><ul>${j.d.map(x=>`<li>${x}</li>`).join("")}</ul></div></div>`).join("");
   document.getElementById("skills").innerHTML=d.skillGroups.map(g=>`<div class="skill"><h5>${g[0]}</h5><div class="sg">${g[1].map(x=>`<span>${x}</span>`).join("")}</div></div>`).join("");
   document.getElementById("contact").innerHTML=d.contactInfo.map(c=>`<div class="c"><div class="k">${c[1]}</div><div class="v">${/@/.test(c[2])?`<a href="mailto:${c[2]}">${c[2]}</a>`:c[2]}</div></div>`).join("");
   document.getElementById("langBtn").textContent=d.btn;
