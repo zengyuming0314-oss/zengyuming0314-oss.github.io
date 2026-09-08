@@ -2,7 +2,8 @@ window.WORKS = [
   {
     "file": "works/AIGC/米娅波布一家.mp4",
     "title": "米娅波布一家",
-    "cat": "AIGC"
+    "cat": "AIGC",
+    "poster": "works/AIGC/米娅波布一家.mp4.poster.jpg"
   },
   {
     "file": "works/一些短视频运营数据 — **Short‑video Operation Data**/0768e28954714a7b15b77d27407b48a6.PNG",
@@ -54,37 +55,44 @@ window.WORKS = [
   {
     "file": "works/人物IP/2月12日.mp4",
     "title": "2月12日",
-    "cat": "人物IP"
+    "cat": "人物IP",
+    "poster": "works/人物IP/2月12日.mp4.poster.jpg"
   },
   {
     "file": "works/人物IP/2月16日.mp4",
     "title": "2月16日",
-    "cat": "人物IP"
+    "cat": "人物IP",
+    "poster": "works/人物IP/2月16日.mp4.poster.jpg"
   },
   {
     "file": "works/人物IP/3月2日.mp4",
     "title": "3月2日",
-    "cat": "人物IP"
+    "cat": "人物IP",
+    "poster": "works/人物IP/3月2日.mp4.poster.jpg"
   },
   {
     "file": "works/人物IP/8月3日.mp4",
     "title": "8月3日",
-    "cat": "人物IP"
+    "cat": "人物IP",
+    "poster": "works/人物IP/8月3日.mp4.poster.jpg"
   },
   {
     "file": "works/宣传片/5G智慧生态农业科技产业园招商片.mp4",
     "title": "5G智慧生态农业科技产业园招商片",
-    "cat": "宣传片"
+    "cat": "宣传片",
+    "poster": "works/宣传片/5G智慧生态农业科技产业园招商片.mp4.poster.jpg"
   },
   {
     "file": "works/宣传片/涠洲岛产品样片.mp4",
     "title": "涠洲岛产品样片",
-    "cat": "宣传片"
+    "cat": "宣传片",
+    "poster": "works/宣传片/涠洲岛产品样片.mp4.poster.jpg"
   },
   {
     "file": "works/宣传片/雁山基地宣传片.mp4",
     "title": "雁山基地宣传片",
-    "cat": "宣传片"
+    "cat": "宣传片",
+    "poster": "works/宣传片/雁山基地宣传片.mp4.poster.jpg"
   },
   {
     "file": "works/宣传类**Promotional**/开业.mp4",
@@ -95,22 +103,26 @@ window.WORKS = [
   {
     "file": "works/文旅/冬日全州.mp4",
     "title": "冬日全州",
-    "cat": "文旅"
+    "cat": "文旅",
+    "poster": "works/文旅/冬日全州.mp4.poster.jpg"
   },
   {
     "file": "works/文旅/天湖短视频.mp4",
     "title": "天湖短视频",
-    "cat": "文旅"
+    "cat": "文旅",
+    "poster": "works/文旅/天湖短视频.mp4.poster.jpg"
   },
   {
     "file": "works/文旅/文旅片.mp4",
     "title": "文旅片",
-    "cat": "文旅"
+    "cat": "文旅",
+    "poster": "works/文旅/文旅片.mp4.poster.jpg"
   },
   {
     "file": "works/文旅/春茶短片.mp4",
     "title": "春茶短片",
-    "cat": "文旅"
+    "cat": "文旅",
+    "poster": "works/文旅/春茶短片.mp4.poster.jpg"
   },
   {
     "file": "works/文旅类**Culture & Tourism**/海边旅拍.mp4",
@@ -121,17 +133,20 @@ window.WORKS = [
   {
     "file": "works/短片/咖喱龙虾.mp4",
     "title": "咖喱龙虾",
-    "cat": "短片"
+    "cat": "短片",
+    "poster": "works/短片/咖喱龙虾.mp4.poster.jpg"
   },
   {
     "file": "works/短片/文旅创作.mp4",
     "title": "文旅创作",
-    "cat": "短片"
+    "cat": "短片",
+    "poster": "works/短片/文旅创作.mp4.poster.jpg"
   },
   {
     "file": "works/短视频类1. **Short‑form Video**/扫街4.mp4",
     "title": "扫街4",
-    "cat": "短片"
+    "cat": "短片",
+    "poster": "works/短视频类1. **Short‑form Video**/扫街4.mp4.poster.jpg"
   },
   {
     "file": "works/短视频类1. **Short‑form Video**/汽车保时捷.mp4",
@@ -142,17 +157,20 @@ window.WORKS = [
   {
     "file": "works/短视频类1. **Short‑form Video**/油菜花2.mp4",
     "title": "油菜花2",
-    "cat": "短片"
+    "cat": "短片",
+    "poster": "works/短视频类1. **Short‑form Video**/油菜花2.mp4.poster.jpg"
   },
   {
     "file": "works/纪录片/云南美食纪录片.mp4",
     "title": "云南美食纪录片",
-    "cat": "纪录片"
+    "cat": "纪录片",
+    "poster": "works/纪录片/云南美食纪录片.mp4.poster.jpg"
   },
   {
     "file": "works/纪录片/纪录片.mp4",
     "title": "纪录片",
-    "cat": "纪录片"
+    "cat": "纪录片",
+    "poster": "works/纪录片/纪录片.mp4.poster.jpg"
   },
   {
     "file": "works/纪录片**Documentary**/南昌纪录片.mp4",
@@ -175,16 +193,19 @@ window.WORKS = [
   {
     "file": "works/访谈/11月19日.mp4",
     "title": "11月19日",
-    "cat": "访谈"
+    "cat": "访谈",
+    "poster": "works/访谈/11月19日.mp4.poster.jpg"
   },
   {
     "file": "works/访谈/11月9日(1).mp4",
     "title": "11月9日(1)",
-    "cat": "访谈"
+    "cat": "访谈",
+    "poster": "works/访谈/11月9日(1).mp4.poster.jpg"
   },
   {
     "file": "works/访谈/最终无水印.mp4",
     "title": "最终无水印",
-    "cat": "访谈"
+    "cat": "访谈",
+    "poster": "works/访谈/最终无水印.mp4.poster.jpg"
   }
 ];
