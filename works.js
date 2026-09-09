@@ -83,12 +83,6 @@ window.WORKS = [
     "poster": "works/宣传片/5G智慧生态农业科技产业园招商片.mp4.poster.jpg"
   },
   {
-    "file": "works/宣传片/涠洲岛产品样片.mp4",
-    "title": "涠洲岛产品样片",
-    "cat": "宣传片",
-    "poster": "works/宣传片/涠洲岛产品样片.mp4.poster.jpg"
-  },
-  {
     "file": "works/宣传片/雁山基地宣传片.mp4",
     "title": "雁山基地宣传片",
     "cat": "宣传片",
